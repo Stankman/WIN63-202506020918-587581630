@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>Turbo.WIN63202407091256704579380</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PluginOutputPath>C:\Users\mikke\Documents\turbo\Turbo\bin\Debug\net8.0\plugins\</PluginOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="JetBrains.Annotations" Version="2024.2.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\turbo\Turbo.Packets\Turbo.Packets.csproj" />
+    </ItemGroup>
+
+    <Target Name="CopyMainLibrary" AfterTargets="Build">
+        <!-- Ensure the output directory exists -->
+        <MakeDir Directories="$(PluginOutputPath)" />
+        <!-- Copy the main library to the specified output path -->
+        <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(PluginOutputPath)" />
+    </Target>
+
+</Project>
