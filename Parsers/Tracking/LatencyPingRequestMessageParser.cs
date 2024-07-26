@@ -5,7 +5,7 @@ using Turbo.Packets.Parsers;
 
 namespace Turbo.WIN63202407091256704579380.Parsers.Tracking;
 
-public class LatencyPingResponseMessageParser : AbstractParser<LatencyPingRequestMessage>
+public class LatencyPingRequestMessageParser : AbstractParser<LatencyPingRequestMessage>
 {
     public override IMessageEvent Parse(IClientPacket packet) => new LatencyPingRequestMessage()
     {

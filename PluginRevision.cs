@@ -52,7 +52,7 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.GetSoundSettingsEvent, new GetSoundSettingsParser() },
         { (int)MessageEvent.GetUnreadForumsCountMessageEvent, new GetUnreadForumsCountMessageParser() },
         { (int)MessageEvent.GetNextTargetedOfferEvent, new GetNextTargetedOfferParser() },
-        { (int)MessageEvent.LatencyPingRequestMessageEvent, new LatencyPingResponseMessageParser() },
+        { (int)MessageEvent.LatencyPingRequestMessageEvent, new LatencyPingRequestMessageParser() },
         { (int)MessageEvent.GetCurrentTimingCodeMessageEvent, new GetCurrentTimingCodeMessageParser() },
         { (int)MessageEvent.LatencyPingReportMessageEvent, new LatencyPingReportMessageParser() },
         { (int)MessageEvent.PongMessageEvent, new PongMessageParser() }
@@ -68,7 +68,7 @@ public class PluginRevision : IRevision
         { typeof(NavigatorSettingsMessage), new NavigatorSettingsSerializer() },
         { typeof(CurrentTimingCodeMessage), new CurrentTimingCodeMessageSerializer() },
         { typeof(UserObjectMessage), new UserObjectMessageSerializer() },
-        { typeof(LatencyPingRequestMessage), new LatencyPingRequestMessageSerializer() },
+        { typeof(LatencyPingResponseMessage), new LatencyPingResponseMessageSerializer() },
         { typeof(PingMessage), new PingMessageSerializer() }
     };
 }
