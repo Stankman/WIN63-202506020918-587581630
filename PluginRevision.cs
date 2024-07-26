@@ -55,7 +55,9 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.LatencyPingRequestMessageEvent, new LatencyPingRequestMessageParser() },
         { (int)MessageEvent.GetCurrentTimingCodeMessageEvent, new GetCurrentTimingCodeMessageParser() },
         { (int)MessageEvent.LatencyPingReportMessageEvent, new LatencyPingReportMessageParser() },
-        { (int)MessageEvent.PongMessageEvent, new PongMessageParser() }
+        { (int)MessageEvent.PongMessageEvent, new PongMessageParser() },
+        { (int)MessageEvent.PerformanceLogMessageEvent, new PerformanceLogMessageParser()},
+        { (int)MessageEvent.LagWarningReportMessageEvent, new LagWarningReportMessageParser()}
     };
 
     public IDictionary<Type, ISerializer> Serializers { get; } = new Dictionary<Type, ISerializer>
