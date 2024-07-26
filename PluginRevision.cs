@@ -50,7 +50,8 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.GetUnreadForumsCountMessageEvent, new GetUnreadForumsCountMessageParser() },
         { (int)MessageEvent.GetNextTargetedOfferEvent, new GetNextTargetedOfferParser() },
         { (int)MessageEvent.LatencyPingRequestMessageEvent, new LatencyPingRequestMessageParser() },
-        { (int)MessageEvent.GetCurrentTimingCodeMessageEvent, new GetCurrentTimingCodeMessageParser() }
+        { (int)MessageEvent.GetCurrentTimingCodeMessageEvent, new GetCurrentTimingCodeMessageParser() },
+        { (int)MessageEvent.LatencyPingReportMessageEvent, new LatencyPingReportMessageParser() }
     };
 
     public IDictionary<Type, ISerializer> Serializers { get; } = new Dictionary<Type, ISerializer>
