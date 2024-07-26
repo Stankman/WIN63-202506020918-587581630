@@ -14,6 +14,7 @@ public static class MessageComposer
     public const int NavigatorSettingsComposer = 895;
     public const int CurrentTimingCodeMessageComposer = 3382;
     public const int UserObjectComposer = 3048;
+    public const int LatencyPingRequestMessageComposer = 931;
 }
 
 [PublicAPI]
