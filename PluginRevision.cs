@@ -1,10 +1,11 @@
 ﻿using Turbo.Core.Packets.Messages;
 using Turbo.Core.Packets.Revisions;
-using Turbo.Packets.Outgoing;
+using Turbo.Packets.Outgoing.Advertising;
 using Turbo.Packets.Outgoing.Availability;
 using Turbo.Packets.Outgoing.Competition;
 using Turbo.Packets.Outgoing.Handshake;
 using Turbo.Packets.Outgoing.Navigator;
+using Turbo.WIN63202407091256704579380.Parsers.Advertising;
 using Turbo.WIN63202407091256704579380.Parsers.Catalog;
 using Turbo.WIN63202407091256704579380.Parsers.Competition;
 using Turbo.WIN63202407091256704579380.Parsers.Friendlist;
@@ -17,6 +18,7 @@ using Turbo.WIN63202407091256704579380.Parsers.Nft;
 using Turbo.WIN63202407091256704579380.Parsers.SoundSettings;
 using Turbo.WIN63202407091256704579380.Parsers.Tracking;
 using Turbo.WIN63202407091256704579380.Parsers.Users;
+using Turbo.WIN63202407091256704579380.Serializer.Advertising;
 using Turbo.WIN63202407091256704579380.Serializer.Availability;
 using Turbo.WIN63202407091256704579380.Serializer.Competition;
 using Turbo.WIN63202407091256704579380.Serializer.Handshake;
@@ -50,7 +52,9 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.GetUnreadForumsCountMessageEvent, new GetUnreadForumsCountMessageParser() },
         { (int)MessageEvent.GetNextTargetedOfferEvent, new GetNextTargetedOfferParser() },
         { (int)MessageEvent.LatencyPingRequestMessageEvent, new LatencyPingRequestMessageParser() },
-        { (int)MessageEvent.GetCurrentTimingCodeMessageEvent, new GetCurrentTimingCodeMessageParser() }
+        { (int)MessageEvent.GetCurrentTimingCodeMessageEvent, new GetCurrentTimingCodeMessageParser() },
+        { (int)MessageEvent.GetInterstitialMessageEvent, new GetInterstitialMessageParser() },
+        { (int)MessageEvent.InterstitialShownMessageEvent, new InterstitialShownMessageParser() }
     };
 
     public IDictionary<Type, ISerializer> Serializers { get; } = new Dictionary<Type, ISerializer>
@@ -64,5 +68,6 @@ public class PluginRevision : IRevision
         { typeof(NavigatorSettingsMessage), new NavigatorSettingsSerializer() },
         { typeof(CurrentTimingCodeMessage), new CurrentTimingCodeMessageSerializer() },
         { typeof(UserObjectMessage), new UserObjectMessageSerializer() },
+        { typeof(InterstitialMessage), new InterstitialMessageSerializer() }
     };
 }
