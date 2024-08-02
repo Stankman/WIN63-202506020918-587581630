@@ -1,10 +1,12 @@
 ﻿using Turbo.Core.Packets.Messages;
 using Turbo.Core.Packets.Revisions;
+using Turbo.Packets.Incoming.Tracking;
 using Turbo.Packets.Outgoing;
 using Turbo.Packets.Outgoing.Availability;
 using Turbo.Packets.Outgoing.Competition;
 using Turbo.Packets.Outgoing.Handshake;
 using Turbo.Packets.Outgoing.Navigator;
+using Turbo.Packets.Outgoing.Tracking;
 using Turbo.WIN63202407091256704579380.Parsers.Catalog;
 using Turbo.WIN63202407091256704579380.Parsers.Competition;
 using Turbo.WIN63202407091256704579380.Parsers.Friendlist;
@@ -21,6 +23,7 @@ using Turbo.WIN63202407091256704579380.Serializer.Availability;
 using Turbo.WIN63202407091256704579380.Serializer.Competition;
 using Turbo.WIN63202407091256704579380.Serializer.Handshake;
 using Turbo.WIN63202407091256704579380.Serializer.Navigator;
+using Turbo.WIN63202407091256704579380.Serializer.Tracking;
 
 namespace Turbo.WIN63202407091256704579380;
 
@@ -50,7 +53,11 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.GetUnreadForumsCountMessageEvent, new GetUnreadForumsCountMessageParser() },
         { (int)MessageEvent.GetNextTargetedOfferEvent, new GetNextTargetedOfferParser() },
         { (int)MessageEvent.LatencyPingRequestMessageEvent, new LatencyPingRequestMessageParser() },
-        { (int)MessageEvent.GetCurrentTimingCodeMessageEvent, new GetCurrentTimingCodeMessageParser() }
+        { (int)MessageEvent.GetCurrentTimingCodeMessageEvent, new GetCurrentTimingCodeMessageParser() },
+        { (int)MessageEvent.LatencyPingReportMessageEvent, new LatencyPingReportMessageParser() },
+        { (int)MessageEvent.PongMessageEvent, new PongMessageParser() },
+        { (int)MessageEvent.PerformanceLogMessageEvent, new PerformanceLogMessageParser()},
+        { (int)MessageEvent.LagWarningReportMessageEvent, new LagWarningReportMessageParser()}
     };
 
     public IDictionary<Type, ISerializer> Serializers { get; } = new Dictionary<Type, ISerializer>
@@ -59,10 +66,11 @@ public class PluginRevision : IRevision
         { typeof(CompleteDiffieHandshakeComposer), new CompleteDiffieHandshakeSerializer() },
         { typeof(AuthenticationOKMessage), new AuthenticationOKMessageSerializer() },
         { typeof(UserRightsMessage), new UserRightsMessageSerializer() },
-        { typeof(PingMessage), new PingMessageSerializer() },
         { typeof(AvailabilityStatusMessage), new AvailabilityStatusMessageSerializer() },
         { typeof(NavigatorSettingsMessage), new NavigatorSettingsSerializer() },
         { typeof(CurrentTimingCodeMessage), new CurrentTimingCodeMessageSerializer() },
         { typeof(UserObjectMessage), new UserObjectMessageSerializer() },
+        { typeof(LatencyPingResponseMessage), new LatencyPingResponseMessageSerializer() },
+        { typeof(PingMessage), new PingMessageSerializer() }
     };
 }
