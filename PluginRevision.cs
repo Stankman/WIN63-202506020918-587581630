@@ -6,6 +6,8 @@ using Turbo.Packets.Outgoing.Availability;
 using Turbo.Packets.Outgoing.Competition;
 using Turbo.Packets.Outgoing.Handshake;
 using Turbo.Packets.Outgoing.Navigator;
+using Turbo.Packets.Outgoing.Room.Engine;
+using Turbo.Packets.Outgoing.Room.Session;
 using Turbo.Packets.Outgoing.Tracking;
 using Turbo.WIN63202407091256704579380.Parsers.Advertising;
 using Turbo.WIN63202407091256704579380.Parsers.Catalog;
@@ -17,6 +19,7 @@ using Turbo.WIN63202407091256704579380.Parsers.Inventory.Badges;
 using Turbo.WIN63202407091256704579380.Parsers.Inventory.Purse;
 using Turbo.WIN63202407091256704579380.Parsers.NewNavigator;
 using Turbo.WIN63202407091256704579380.Parsers.Nft;
+using Turbo.WIN63202407091256704579380.Parsers.room;
 using Turbo.WIN63202407091256704579380.Parsers.SoundSettings;
 using Turbo.WIN63202407091256704579380.Parsers.Tracking;
 using Turbo.WIN63202407091256704579380.Parsers.Users;
@@ -25,6 +28,7 @@ using Turbo.WIN63202407091256704579380.Serializer.Availability;
 using Turbo.WIN63202407091256704579380.Serializer.Competition;
 using Turbo.WIN63202407091256704579380.Serializer.Handshake;
 using Turbo.WIN63202407091256704579380.Serializer.Navigator;
+using Turbo.WIN63202407091256704579380.Serializer.room;
 using Turbo.WIN63202407091256704579380.Serializer.Tracking;
 
 namespace Turbo.WIN63202407091256704579380;
@@ -57,11 +61,13 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.LatencyPingRequestMessageEvent, new LatencyPingRequestMessageParser() },
         { (int)MessageEvent.GetCurrentTimingCodeMessageEvent, new GetCurrentTimingCodeMessageParser() },
         { (int)MessageEvent.GetInterstitialMessageEvent, new GetInterstitialMessageParser() },
-        { (int)MessageEvent.InterstitialShownMessageEvent, new InterstitialShownMessageParser() },
         { (int)MessageEvent.LatencyPingReportMessageEvent, new LatencyPingReportMessageParser() },
         { (int)MessageEvent.PongMessageEvent, new PongMessageParser() },
-        { (int)MessageEvent.PerformanceLogMessageEvent, new PerformanceLogMessageParser()},
-        { (int)MessageEvent.LagWarningReportMessageEvent, new LagWarningReportMessageParser()}
+        { (int)MessageEvent.PerformanceLogMessageEvent, new PerformanceLogMessageParser() },
+        { (int)MessageEvent.LagWarningReportMessageEvent, new LagWarningReportMessageParser() },
+        { (int)MessageEvent.OpenFlatConnectionMessageEvent, new OpenFlatConnectionMessageParser() },
+        { (int)MessageEvent.InterstitialShownMessageEvent, new InterstitialShownMessageParser() }
+
     };
 
     public IDictionary<Type, ISerializer> Serializers { get; } = new Dictionary<Type, ISerializer>
@@ -74,8 +80,11 @@ public class PluginRevision : IRevision
         { typeof(NavigatorSettingsMessage), new NavigatorSettingsSerializer() },
         { typeof(CurrentTimingCodeMessage), new CurrentTimingCodeMessageSerializer() },
         { typeof(UserObjectMessage), new UserObjectMessageSerializer() },
-        { typeof(InterstitialMessage), new InterstitialMessageSerializer() },
         { typeof(LatencyPingResponseMessage), new LatencyPingResponseMessageSerializer() },
-        { typeof(PingMessage), new PingMessageSerializer() }
+        { typeof(PingMessage), new PingMessageSerializer() },
+        { typeof(OpenConnectionMessage), new OpenConnectionMessageSerializer() },
+        { typeof(InterstitialMessage), new InterstitialMessageSerializer() },
+        { typeof(RoomReadyMessage), new RoomReadyMessageSerializer()},
+        { typeof(RoomPropertyMessage), new RoomPropertyMessageSerializer()}
     };
 }

@@ -16,6 +16,10 @@ public static class MessageComposer
     public const int UserObjectComposer = 3048;
     public const int InterstitialMessageComposer = 3430;
     public const int LatencyPingResponseMessageComposer = 931;
+    public const int OpenConnectionMessageComposer = 327;
+    public const int UserNftChatStylesMessageEvent = 1205;
+    public const int RoomReadyMessageEvent = 3024;
+    public const int RoomPropertyMessageEvent = 3633;
 }
 
 [PublicAPI]
