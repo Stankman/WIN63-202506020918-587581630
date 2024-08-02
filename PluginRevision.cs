@@ -57,7 +57,7 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.LatencyPingRequestMessageEvent, new LatencyPingRequestMessageParser() },
         { (int)MessageEvent.GetCurrentTimingCodeMessageEvent, new GetCurrentTimingCodeMessageParser() },
         { (int)MessageEvent.GetInterstitialMessageEvent, new GetInterstitialMessageParser() },
-        { (int)MessageEvent.InterstitialShownMessageEvent, new InterstitialShownMessageParser() 
+        { (int)MessageEvent.InterstitialShownMessageEvent, new InterstitialShownMessageParser() },
         { (int)MessageEvent.LatencyPingReportMessageEvent, new LatencyPingReportMessageParser() },
         { (int)MessageEvent.PongMessageEvent, new PongMessageParser() },
         { (int)MessageEvent.PerformanceLogMessageEvent, new PerformanceLogMessageParser()},
@@ -74,7 +74,7 @@ public class PluginRevision : IRevision
         { typeof(NavigatorSettingsMessage), new NavigatorSettingsSerializer() },
         { typeof(CurrentTimingCodeMessage), new CurrentTimingCodeMessageSerializer() },
         { typeof(UserObjectMessage), new UserObjectMessageSerializer() },
-        { typeof(InterstitialMessage), new InterstitialMessageSerializer() }
+        { typeof(InterstitialMessage), new InterstitialMessageSerializer() },
         { typeof(LatencyPingResponseMessage), new LatencyPingResponseMessageSerializer() },
         { typeof(PingMessage), new PingMessageSerializer() }
     };
