@@ -7,6 +7,7 @@ using Turbo.Packets.Outgoing.Competition;
 using Turbo.Packets.Outgoing.Handshake;
 using Turbo.Packets.Outgoing.Navigator;
 using Turbo.Packets.Outgoing.Room.Engine;
+using Turbo.Packets.Outgoing.Room.Permissions;
 using Turbo.Packets.Outgoing.Room.Session;
 using Turbo.Packets.Outgoing.Tracking;
 using Turbo.WIN63202407091256704579380.Parsers.Advertising;
@@ -66,8 +67,9 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.PerformanceLogMessageEvent, new PerformanceLogMessageParser() },
         { (int)MessageEvent.LagWarningReportMessageEvent, new LagWarningReportMessageParser() },
         { (int)MessageEvent.OpenFlatConnectionMessageEvent, new OpenFlatConnectionMessageParser() },
-        { (int)MessageEvent.InterstitialShownMessageEvent, new InterstitialShownMessageParser() }
-
+        { (int)MessageEvent.InterstitialShownMessageEvent, new InterstitialShownMessageParser() },
+        { (int)MessageEvent.GetFurnitureAliasesMessageEvent, new GetFurnitureAliasesMessageParser() },
+        { (int)MessageEvent.GetHeightMapMessageEvent, new GetHeightMapMessageParser() },
     };
 
     public IDictionary<Type, ISerializer> Serializers { get; } = new Dictionary<Type, ISerializer>
@@ -85,6 +87,8 @@ public class PluginRevision : IRevision
         { typeof(OpenConnectionMessage), new OpenConnectionMessageSerializer() },
         { typeof(InterstitialMessage), new InterstitialMessageSerializer() },
         { typeof(RoomReadyMessage), new RoomReadyMessageSerializer()},
-        { typeof(RoomPropertyMessage), new RoomPropertyMessageSerializer()}
+        { typeof(RoomPropertyMessage), new RoomPropertyMessageSerializer()},
+        { typeof(YouAreControllerMessage), new YouAreControllerMessageSerializer() },
+        { typeof(FurnitureAliasesMessage), new FurnitureAliasesMessageSerializer() }
     };
 }

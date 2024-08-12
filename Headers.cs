@@ -20,6 +20,8 @@ public static class MessageComposer
     public const int UserNftChatStylesMessageEvent = 1205;
     public const int RoomReadyMessageEvent = 3024;
     public const int RoomPropertyMessageEvent = 3633;
+    public const int YouAreControllerMessageEvent = 3116;
+    public const int FurnitureAliasesMessageEvent = 382;
 }
 
 [PublicAPI]
