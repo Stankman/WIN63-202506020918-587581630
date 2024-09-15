@@ -12,6 +12,7 @@ public static class MessageComposer
     public const int AvailabilityStatusMessageComposer = 3449;
     public const int InfoFeedEnableMessageComposer = 114;
     public const int NavigatorSettingsComposer = 895;
+    public const int NewNavigatorPreferencesComposer = 3658;
     public const int CurrentTimingCodeMessageComposer = 3382;
     public const int UserObjectComposer = 3048;
     public const int InterstitialMessageComposer = 3430;
@@ -22,6 +23,13 @@ public static class MessageComposer
     public const int RoomPropertyMessageEvent = 3633;
     public const int YouAreControllerMessageEvent = 3116;
     public const int FurnitureAliasesMessageEvent = 382;
+    
+    public const int GetGuestRoomResultComposer = 2048;
+    public const int NavigatorMetaDataComposer = 3718;
+    public const int NavigatorLiftedRoomsComposer = 1310;
+    public const int NavigatorSavedSearchesComposer = 1134;
+    public const int UserFlatCatsComposer = 535;
+    public const int UserEventCatsComposer = 804;
 }
 
 [PublicAPI]

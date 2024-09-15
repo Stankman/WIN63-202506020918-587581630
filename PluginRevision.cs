@@ -1,5 +1,6 @@
 ﻿using Turbo.Core.Packets.Messages;
 using Turbo.Core.Packets.Revisions;
+using Turbo.Packets.Incoming.Navigator;
 using Turbo.Packets.Outgoing.Advertising;
 using Turbo.Packets.Incoming.Tracking;
 using Turbo.Packets.Outgoing.Availability;
@@ -18,6 +19,7 @@ using Turbo.WIN63202407091256704579380.Parsers.GroupForums;
 using Turbo.WIN63202407091256704579380.Parsers.Handshake;
 using Turbo.WIN63202407091256704579380.Parsers.Inventory.Badges;
 using Turbo.WIN63202407091256704579380.Parsers.Inventory.Purse;
+using Turbo.WIN63202407091256704579380.Parsers.Navigator;
 using Turbo.WIN63202407091256704579380.Parsers.NewNavigator;
 using Turbo.WIN63202407091256704579380.Parsers.Nft;
 using Turbo.WIN63202407091256704579380.Parsers.room;
@@ -51,6 +53,29 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.GetMOTDMessageEvent, new GetMOTDMessageParser() },
         { (int)MessageEvent.MessengerInitMessageEvent, new MessengerInitMessageParser() },
         { (int)MessageEvent.NewNavigatorInitEvent, new NewNavigatorInitParser() },
+        { (int)MessageEvent.NewNavigatorSearchEvent, new NewNavigatorSearchParser() },
+        { (int)MessageEvent.GetUserFlatCatsMessageEvent, new GetUserFlatCatsParser() },
+        { (int)MessageEvent.GetUserEventCatsMessageEvent, new GetUserEventCatsParser() },
+        { (int)MessageEvent.CanCreateRoomMessageEvent, new CanCreateRoomParser() },
+        { (int)MessageEvent.ForwardToSomeRoomMessageEvent, new ForwardToSomeRoomParser() },
+        { (int)MessageEvent.SetNewNavigatorWindowPreferencesMessageEvent, new SetNewNavigatorWindowPreferencesMessageParser()},
+        { (int)MessageEvent.CreateFlatMessageEvent, new CreateFlatMessageParser()},
+        { (int)MessageEvent.GetPopularRoomTagsMessageEvent, new GetPopularRoomTagsMessageParser()},
+        { (int)MessageEvent.GetGuestRoomMessageEvent, new GetGuestRoomMessageParser()},
+        { (int)MessageEvent.MyFavouriteRoomsSearchMessageEvent, new MyFavouriteRoomsSearchMessageParser()},
+        { (int)MessageEvent.MyFriendsRoomsSearchMessageEvent, new MyFriendsRoomsSearchMessageParser()},
+        { (int)MessageEvent.MyGuildBasesSearchMessageEvent, new MyGuildBasesSearchMessageParser()},
+        { (int)MessageEvent.MyRoomHistorySearchMessageEvent, new MyRoomHistorySearchMessageParser()},
+        { (int)MessageEvent.MyRoomRightsSearchMessageEvent, new MyRoomRightsSearchMessageParser()},
+        { (int)MessageEvent.MyRoomsSearchMessageEvent, new MyRoomsSearchMessageParser()},
+        { (int)MessageEvent.NavigatorAddCollapsedCategoryMessageEvent, new NavigatorAddCollapsedCategoryMessageParser()},
+        { (int)MessageEvent.NavigatorAddSavedSearchEvent, new NavigatorAddSavedSearchParser()},
+        { (int)MessageEvent.NavigatorDeleteSavedSearchEvent, new NavigatorDeleteSavedSearchParser()},
+        { (int)MessageEvent.NavigatorRemoveCollapsedCategoryMessageEvent, new NavigatorRemoveCollapsedCategoryMessageParser()},
+        { (int)MessageEvent.NavigatorSetSearchCodeViewModeMessageEvent, new NavigatorSetSearchCodeViewModeMessageParser()},
+        { (int)MessageEvent.PopularRoomsSearchMessageEvent, new PopularRoomsSearchMessageParser()},
+        { (int)MessageEvent.RoomsWhereMyFriendsAreSearchMessageEvent, new RoomsWhereMyFriendsAreSearchMessageParser()},
+        { (int)MessageEvent.RoomsWithHighestScoreSearchMessageEvent, new RoomsWithHighestScoreSearchMessageParser()},
         { (int)MessageEvent.GetCreditsInfoEvent, new GetCreditsInfoParser() },
         { (int)MessageEvent.GetNftCreditsMessageEvent, new GetNftCreditsMessageParser() },
         { (int)MessageEvent.GetSilverMessageEvent, new GetSilverMessageParser() },
@@ -80,6 +105,7 @@ public class PluginRevision : IRevision
         { typeof(UserRightsMessage), new UserRightsMessageSerializer() },
         { typeof(AvailabilityStatusMessage), new AvailabilityStatusMessageSerializer() },
         { typeof(NavigatorSettingsMessage), new NavigatorSettingsSerializer() },
+        { typeof(NewNavigatorPreferencesMessage), new NewNavigatorPreferencesSerializer() },
         { typeof(CurrentTimingCodeMessage), new CurrentTimingCodeMessageSerializer() },
         { typeof(UserObjectMessage), new UserObjectMessageSerializer() },
         { typeof(LatencyPingResponseMessage), new LatencyPingResponseMessageSerializer() },
@@ -89,6 +115,12 @@ public class PluginRevision : IRevision
         { typeof(RoomReadyMessage), new RoomReadyMessageSerializer()},
         { typeof(RoomPropertyMessage), new RoomPropertyMessageSerializer()},
         { typeof(YouAreControllerMessage), new YouAreControllerMessageSerializer() },
-        { typeof(FurnitureAliasesMessage), new FurnitureAliasesMessageSerializer() }
+        { typeof(FurnitureAliasesMessage), new FurnitureAliasesMessageSerializer() },
+        { typeof(GetGuestRoomResultMessage), new GetGuestRoomResultSerializer() },
+        { typeof(UserFlatCatsMessage), new UserFlatCatsSerializer() },
+        { typeof(NavigatorLiftedRoomsMessage), new NavigatorLiftedRoomsSerializer() },
+        { typeof(NavigatorMetaDataMessage), new NavigatorMetaDataSerializer() },
+        { typeof(NavigatorSavedSearchesMessage), new NavigatorSavedSearchesSerializer() },
+        { typeof(NavigatorEventCategoriesMessage), new NavigatorEventCategoriesSerializer() },
     };
 }

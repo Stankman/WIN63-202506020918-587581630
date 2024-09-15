@@ -19,7 +19,7 @@ public class UserObjectMessageSerializer() : AbstractSerializer<UserObjectMessag
         packet.WriteInteger(0); // respect left
         packet.WriteInteger(0); // pet respect left
         packet.WriteBoolean(false); // stream publishing enabled
-        packet.WriteString(message.Player.PlayerDetails.DateCreated.ToString()); // last online
+        packet.WriteString(message.Player.PlayerDetails.CreatedAt.ToString()); // last online
         packet.WriteBoolean(false); // can name change
         packet.WriteBoolean(false); // account safety locked
     }
