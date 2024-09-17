@@ -118,6 +118,7 @@ public class PluginRevision : IRevision
         { typeof(FurnitureAliasesMessage), new FurnitureAliasesMessageSerializer() },
         { typeof(GetGuestRoomResultMessage), new GetGuestRoomResultSerializer() },
         { typeof(UserFlatCatsMessage), new UserFlatCatsSerializer() },
+        { typeof(UserEventCatsMessage), new UserEventCatsSerializer() },
         { typeof(NavigatorLiftedRoomsMessage), new NavigatorLiftedRoomsSerializer() },
         { typeof(NavigatorMetaDataMessage), new NavigatorMetaDataSerializer() },
         { typeof(NavigatorSavedSearchesMessage), new NavigatorSavedSearchesSerializer() },

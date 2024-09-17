@@ -30,6 +30,7 @@ public static class MessageComposer
     public const int NavigatorSavedSearchesComposer = 1134;
     public const int UserFlatCatsComposer = 535;
     public const int UserEventCatsComposer = 804;
+    public const int NavigatorCollapsedCategoriesComposer = 1396;
 }
 
 [PublicAPI]
