@@ -123,5 +123,6 @@ public class PluginRevision : IRevision
         { typeof(NavigatorMetaDataMessage), new NavigatorMetaDataSerializer() },
         { typeof(NavigatorSavedSearchesMessage), new NavigatorSavedSearchesSerializer() },
         { typeof(NavigatorEventCategoriesMessage), new NavigatorEventCategoriesSerializer() },
+        { typeof(NavigatorCollapsedCategoriesMessage), new NavigatorCollapsedCategoriesMessageSerializer() },
     };
 }
