@@ -4,7 +4,7 @@ using Turbo.Packets.Parsers;
 
 namespace Turbo.WIN63202407091256704579380.Parsers.Navigator;
 
-public class GetPopularRoomTagsMessageParser : AbstractParser<GetPopularRoomTagsMessage>
+public class GetPopularRoomTagsParser : AbstractParser<GetPopularRoomTagsMessage>
 {
     public override IMessageEvent Parse(IClientPacket packet) => new GetPopularRoomTagsMessage();
 }

@@ -6,5 +6,9 @@ namespace Turbo.WIN63202407091256704579380.Parsers.NewNavigator;
 
 public class NewNavigatorSearchParser : AbstractParser<NewNavigatorSearchMessage>
 {
-    public override IMessageEvent Parse(IClientPacket packet) => new NewNavigatorSearchMessage();
+    public override IMessageEvent Parse(IClientPacket packet) => new NewNavigatorSearchMessage
+    {
+        SearchCodeOriginal = packet.PopString(),
+        FilteringData = packet.PopString()
+    };
 }

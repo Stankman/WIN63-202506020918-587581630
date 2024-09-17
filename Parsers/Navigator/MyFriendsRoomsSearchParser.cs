@@ -4,7 +4,7 @@ using Turbo.Packets.Parsers;
 
 namespace Turbo.WIN63202407091256704579380.Parsers.Navigator;
 
-public class MyFriendsRoomsSearchMessageParser : AbstractParser<MyFriendsRoomsSearchMessage>
+public class MyFriendsRoomsSearchParser : AbstractParser<MyFriendsRoomsSearchMessage>
 {
     public override IMessageEvent Parse(IClientPacket packet) => new MyFriendsRoomsSearchMessage();
 }
