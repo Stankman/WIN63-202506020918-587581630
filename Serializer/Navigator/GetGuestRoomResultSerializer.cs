@@ -41,7 +41,7 @@ public class GetGuestRoomResultSerializer() : AbstractSerializer<GetGuestRoomRes
         packet.WriteInteger((int)roomDetails.TradeType);
         packet.WriteInteger(0);// room score
         packet.WriteInteger(0);// room ranking
-        packet.WriteInteger(0); // category id
+        packet.WriteInteger(1); // category id
         packet.WriteInteger(0); //tag count, iterate string
 
         SerializeBitmask(packet, roomDetails);

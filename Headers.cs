@@ -31,6 +31,8 @@ public static class MessageComposer
     public const int UserFlatCatsComposer = 535;
     public const int UserEventCatsComposer = 804;
     public const int NavigatorCollapsedCategoriesComposer = 1396;
+    public const int GuestRoomSearchResultComposer = 34;
+    public const int NavigatorSearchResultBlocksComposer = 1245;
 }
 
 [PublicAPI]
