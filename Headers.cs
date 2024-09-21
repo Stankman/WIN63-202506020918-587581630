@@ -7,14 +7,28 @@ public static class MessageComposer
     public const int InitDiffieHandshakeComposer = 771;
     public const int CompleteDiffieHandshakeComposer = 3777;
     public const int AuthenticationOKMessageComposer = 2323;
+    public const int AvatarEffectsMessageComposer = 1119;
+    public const int FavouritesMessageComposer = 2676;
+    public const int ScrSendUserInfoMessageComposer = 937;
+    public const int UnseenItemsEventMessageComposer = 1654;
+    public const int FigureSetIdsMessageComposer = 464;
+    public const int NoobnessLevelMessageComposer = 1916;
     public const int UserRightsMessageComposer = 141;
     public const int PingMessageComposer = 658;
     public const int AvailabilityStatusMessageComposer = 3449;
     public const int InfoFeedEnableMessageComposer = 114;
+    public const int AchievementMessageComposer = 1519;
+    public const int ActivityPointsMessageComposer = 2875;
+    public const int AchievementsScoreMessageComposer = 1196;
+    public const int IsFirstLoginOfDayMessageComposer = 3129;
+    public const int MysteryBoxKeysMessageComposer = 351;
+    public const int BuildersClubSubscriptionStatusMessageComposer = 3907;
+    public const int CfhTopicsInitMessageComposer = 3778;
     public const int NavigatorSettingsComposer = 895;
     public const int NewNavigatorPreferencesComposer = 3658;
     public const int CurrentTimingCodeMessageComposer = 3382;
     public const int UserObjectComposer = 3048;
+    public const int IgnoredUsersComposer = 3326;
     public const int InterstitialMessageComposer = 3430;
     public const int LatencyPingResponseMessageComposer = 931;
     public const int OpenConnectionMessageComposer = 327;
@@ -33,6 +47,16 @@ public static class MessageComposer
     public const int NavigatorCollapsedCategoriesComposer = 1396;
     public const int GuestRoomSearchResultComposer = 34;
     public const int NavigatorSearchResultBlocksComposer = 1245;
+
+
+    public const int UserNftChatStylesComposer = 1205;
+    public const int CreditBalanceComposer = 1604;
+    public const int BonusRareInfoComposer = 2518;
+    public const int MessengerInitComposer = 1623;
+    public const int FriendListFragmentComposer = 1142;
+    public const int SilverBalanceComposer = 3226;
+    public const int AccountPreferencesComposer = 2641;
+    public const int UnreadForumsCountComposer = 3270;
 }
 
 [PublicAPI]

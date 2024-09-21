@@ -14,8 +14,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Turbo.Core\Turbo.Core.csproj" />
-      <ProjectReference Include="..\Turbo.Packets\Turbo.Packets.csproj" />
+      <Reference Include="Turbo.Core">
+        <HintPath>..\..\Turbo\Turbo\bin\Debug\net8.0\Turbo.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Turbo.Packets">
+        <HintPath>..\..\Turbo\Turbo\bin\Debug\net8.0\Turbo.Packets.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
     <Target Name="CopyMainLibrary" AfterTargets="Build">

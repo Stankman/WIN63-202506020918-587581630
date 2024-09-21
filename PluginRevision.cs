@@ -33,6 +33,29 @@ using Turbo.WIN63202407091256704579380.Serializer.Handshake;
 using Turbo.WIN63202407091256704579380.Serializer.Navigator;
 using Turbo.WIN63202407091256704579380.Serializer.room;
 using Turbo.WIN63202407091256704579380.Serializer.Tracking;
+using Turbo.WIN63202407091256704579380.Serializer.Inventory.AvatarEffect;
+using Turbo.Packets.Outgoing.Room.Action;
+using Turbo.Packets.Outgoing.Users;
+using Turbo.WIN63202407091256704579380.Serializer.User;
+using Turbo.Packets.Outgoing.Notifications;
+using Turbo.Packets.Outgoing.Catalog.Clothing;
+using Turbo.WIN63202407091256704579380.Serializer.Catalog.Clothing;
+using Turbo.WIN63202407091256704579380.Serializer.Notifications;
+using Turbo.Packets.Outgoing.Inventory.Achievements;
+using Turbo.WIN63202407091256704579380.Serializer.Inventory.Achievements;
+using Turbo.Packets.Outgoing.MysteryBox;
+using Turbo.WIN63202407091256704579380.Serializer.MysteryBox;
+using Turbo.Packets.Outgoing.Catalog;
+using Turbo.WIN63202407091256704579380.Serializer.Catalog;
+using Turbo.Packets.Outgoing.CallForHelp;
+using Turbo.WIN63202407091256704579380.Serializer.CallForHelp;
+using Turbo.Packets.Outgoing.Inventory.Purse;
+using Turbo.WIN63202407091256704579380.Serializer.Inventory.Purse;
+using Turbo.Packets.Outgoing.FriendList;
+using Turbo.WIN63202407091256704579380.Serializer.FriendList;
+using Turbo.Packets.Incoming.Nft;
+using Turbo.Packets.Outgoing.Preferences;
+using Turbo.WIN63202407091256704579380.Serializer.Preferences;
 
 namespace Turbo.WIN63202407091256704579380;
 
@@ -95,6 +118,7 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.InterstitialShownMessageEvent, new InterstitialShownMessageParser() },
         { (int)MessageEvent.GetFurnitureAliasesMessageEvent, new GetFurnitureAliasesMessageParser() },
         { (int)MessageEvent.GetHeightMapMessageEvent, new GetHeightMapMessageParser() },
+        { (int)MessageEvent.GetBonusRareInfoMessageEvent, new GetBonusRareInfoParser() },
     };
 
     public IDictionary<Type, ISerializer> Serializers { get; } = new Dictionary<Type, ISerializer>
@@ -102,12 +126,24 @@ public class PluginRevision : IRevision
         { typeof(InitDiffieHandshakeComposer), new InitDiffieHandshakeSerializer() },
         { typeof(CompleteDiffieHandshakeComposer), new CompleteDiffieHandshakeSerializer() },
         { typeof(AuthenticationOKMessage), new AuthenticationOKMessageSerializer() },
+        { typeof(AvatarEffectMessage), new AvatarEffectsSerializer() },
+        { typeof(FavouritesMessage), new FavouritesSerializer() },
+        { typeof(ScrSendUserInfoMessage), new ScrSendUserInfoSerializer() },
+        { typeof(FigureSetIdsMessage), new FigureSetIdsSerializer() },
+        { typeof(NoobnessLevelMessage), new NoobnessLevelSerializer() },
         { typeof(UserRightsMessage), new UserRightsMessageSerializer() },
         { typeof(AvailabilityStatusMessage), new AvailabilityStatusMessageSerializer() },
+        { typeof(InfoFeedEnableMessage), new InfoFeedEnableMessageSerializer() },
+        { typeof(ActivityPointsMessage), new ActivityPointsSerializer() },
+        { typeof(AchievementsScoreMessage), new AchievementsScoreSerializer() },
         { typeof(NavigatorSettingsMessage), new NavigatorSettingsSerializer() },
         { typeof(NewNavigatorPreferencesMessage), new NewNavigatorPreferencesSerializer() },
         { typeof(CurrentTimingCodeMessage), new CurrentTimingCodeMessageSerializer() },
         { typeof(UserObjectMessage), new UserObjectMessageSerializer() },
+        { typeof(IsFirstLoginOfDayMessage), new IsFirstLoginOfDaySerializer() },
+        { typeof(MysteryBoxKeysMessage), new MysteryBoxKeysSerializer() },
+        { typeof(BuildersClubSubscriptionStatusMessage), new BuildersClubSubscriptionStatusSerializer() },
+        { typeof(CfhTopicsInitMessage), new CfhTopicsInitSerializer() },
         { typeof(LatencyPingResponseMessage), new LatencyPingResponseMessageSerializer() },
         { typeof(PingMessage), new PingMessageSerializer() },
         { typeof(OpenConnectionMessage), new OpenConnectionMessageSerializer() },
@@ -125,6 +161,11 @@ public class PluginRevision : IRevision
         { typeof(NavigatorEventCategoriesMessage), new NavigatorEventCategoriesSerializer() },
         { typeof(NavigatorCollapsedCategoriesMessage), new NavigatorCollapsedCategoriesMessageSerializer() },
         { typeof(GuestRoomSearchResultMessage), new GuestRoomSearchResultSerializer() },
-        { typeof(NavigatorSearchResultBlocksMessage), new NavigatorSearchResultBlocksSerializer() }
+        { typeof(NavigatorSearchResultBlocksMessage), new NavigatorSearchResultBlocksSerializer() },
+        { typeof(CreditBalanceMessage), new CreditBalanceSerializer() },
+        { typeof(BonusRareInfoMessage), new BonusRareInfoSerializer() },
+        { typeof(MessengerInitMessage), new MessengerInitSerializer() },
+        { typeof(FriendListFragmentMessage), new FriendListFragmentSerializer() },
+        { typeof(AccountPreferencesMessage), new AccountPreferencesSerializer() }
     };
 }
