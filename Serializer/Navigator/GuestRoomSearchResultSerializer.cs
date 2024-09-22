@@ -28,31 +28,31 @@ public class GuestRoomSearchResultSerializer() : AbstractSerializer<GuestRoomSea
         }
     }
     
-    private void SerializeRoomData(IServerPacket packet, IRoomDetails roomDetails)
+    private void SerializeRoomData(IServerPacket packet, IRoom room)
     {
-        packet.WriteInteger(roomDetails.Id); // Room ID
-        packet.WriteString(roomDetails.Name); // Room Name
-        packet.WriteString(roomDetails.PlayerName); // Owner Name
-        packet.WriteInteger(roomDetails.UsersNow); // Current User Count
-        packet.WriteInteger(roomDetails.UsersMax); // Max User Count
-        packet.WriteString(roomDetails.Description); // Room Description
-        packet.WriteInteger((int)roomDetails.State); // Room State (Open, Locked, etc.)
-        packet.WriteInteger((int)roomDetails.TradeType); // Trade settings
+        packet.WriteInteger(room.RoomDetails.Id); // Room ID
+        packet.WriteString(room.RoomDetails.Name); // Room Name
+        packet.WriteString(room.RoomDetails.PlayerName); // Owner Name
+        packet.WriteInteger(room.RoomDetails.UsersNow); // Current User Count
+        packet.WriteInteger(room.RoomDetails.UsersMax); // Max User Count
+        packet.WriteString(room.RoomDetails.Description); // Room Description
+        packet.WriteInteger((int)room.RoomDetails.State); // Room State (Open, Locked, etc.)
+        packet.WriteInteger((int)room.RoomDetails.TradeType); // Trade settings
         packet.WriteInteger(0); // Room Score
         packet.WriteInteger(0); // Room Ranking
         packet.WriteInteger(1); // Category ID
         packet.WriteInteger(0); // Number of tags
 
         // Serialize the bitmask for the room.
-        SerializeBitmask(packet, roomDetails);
+        SerializeBitmask(packet, room);
     }
 
-    private void SerializeBitmask(IServerPacket packet, IRoomDetails roomDetails)
+    private void SerializeBitmask(IServerPacket packet, IRoom room)
     {
         int bitmask = 0;
 
         // Check and add settings to the bitmask.
-        if (roomDetails.AllowPets) bitmask |= (int)RoomBitmaskType.AllowPets;
+        if (room.RoomDetails.AllowPets) bitmask |= (int)RoomBitmaskType.AllowPets;
         bitmask += (int)RoomBitmaskType.ShowOwner;
 
         packet.WriteInteger(bitmask);

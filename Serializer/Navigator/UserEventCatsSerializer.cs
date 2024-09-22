@@ -14,7 +14,7 @@ public class UserEventCatsSerializer() : AbstractSerializer<UserEventCatsMessage
         {
             packet.WriteInteger(category.Id);
             packet.WriteString(category.Name);
-            packet.WriteBoolean(category.Enabled);
+            packet.WriteBoolean(category.Visible);
         }
     }
 

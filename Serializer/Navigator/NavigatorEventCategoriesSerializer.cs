@@ -15,7 +15,7 @@ public class NavigatorEventCategoriesSerializer()
         {
             packet.WriteInteger(category.Id);
             packet.WriteString(category.Name ?? string.Empty);
-            packet.WriteBoolean(category.Enabled);
+            packet.WriteBoolean(category.Visible);
         }
     }
 }

@@ -43,17 +43,17 @@ public class NavigatorSearchResultBlocksSerializer() : AbstractSerializer<Naviga
         }
     }
     
-    private void SerializeGuestRoom(IServerPacket packet, IRoomDetails room)
+    private void SerializeGuestRoom(IServerPacket packet, IRoom room)
     {
         packet.WriteInteger(room.Id);              // Room ID
-        packet.WriteString(room.Name);             // Room Name
-        packet.WriteInteger(room.PlayerId);         // Owner ID
-        packet.WriteString(room.PlayerName);        // Owner Name
-        packet.WriteInteger((int)room.State);
-        packet.WriteInteger(room.UsersNow);        // Current users in the room
-        packet.WriteInteger(room.UsersMax);        // Max users allowed in the room
-        packet.WriteString(room.Description);      // Room Description
-        packet.WriteInteger((int)room.TradeType);
+        packet.WriteString(room.RoomDetails.Name);             // Room Name
+        packet.WriteInteger(room.RoomDetails.PlayerId);         // Owner ID
+        packet.WriteString(room.RoomDetails.PlayerName);        // Owner Name
+        packet.WriteInteger((int)room.RoomDetails.State);
+        packet.WriteInteger(room.RoomDetails.UsersNow);        // Current users in the room
+        packet.WriteInteger(room.RoomDetails.UsersMax);        // Max users allowed in the room
+        packet.WriteString(room.RoomDetails.Description);      // Room Description
+        packet.WriteInteger((int)room.RoomDetails.TradeType);
         packet.WriteInteger(0);                    // Room Score
         packet.WriteInteger(0);                    // Room Ranking
         packet.WriteInteger(1);                    // Category ID
