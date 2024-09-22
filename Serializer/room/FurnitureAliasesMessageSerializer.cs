@@ -4,7 +4,7 @@ using Turbo.Packets.Serializers;
 
 namespace Turbo.WIN63202407091256704579380.Serializer.room;
 
-public class FurnitureAliasesMessageSerializer() : AbstractSerializer<FurnitureAliasesMessage>(MessageComposer.FurnitureAliasesMessageEvent)
+public class FurnitureAliasesMessageSerializer() : AbstractSerializer<FurnitureAliasesMessage>(MessageComposer.FurnitureAliasesMessageComposer)
 {
     protected override void Serialize(IServerPacket packet, FurnitureAliasesMessage message)
     {

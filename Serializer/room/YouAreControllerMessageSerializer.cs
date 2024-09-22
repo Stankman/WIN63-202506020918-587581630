@@ -4,7 +4,7 @@ using Turbo.Packets.Serializers;
 
 namespace Turbo.WIN63202407091256704579380.Serializer.room;
 
-public class YouAreControllerMessageSerializer() : AbstractSerializer<YouAreControllerMessage>(MessageComposer.YouAreControllerMessageEvent)
+public class YouAreControllerMessageSerializer() : AbstractSerializer<YouAreControllerMessage>(MessageComposer.YouAreControllerMessageComposer)
 {
     protected override void Serialize(IServerPacket packet, YouAreControllerMessage message)
     {

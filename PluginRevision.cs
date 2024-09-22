@@ -1,5 +1,6 @@
 ﻿using Turbo.Core.Packets.Messages;
 using Turbo.Core.Packets.Revisions;
+using Turbo.Packets.Incoming.FriendList;
 using Turbo.Packets.Incoming.Navigator;
 using Turbo.Packets.Outgoing.Advertising;
 using Turbo.Packets.Incoming.Tracking;
@@ -56,6 +57,7 @@ using Turbo.WIN63202407091256704579380.Serializer.FriendList;
 using Turbo.Packets.Incoming.Nft;
 using Turbo.Packets.Outgoing.Preferences;
 using Turbo.WIN63202407091256704579380.Serializer.Preferences;
+using MessengerInitMessage = Turbo.Packets.Outgoing.FriendList.MessengerInitMessage;
 
 namespace Turbo.WIN63202407091256704579380;
 
@@ -72,7 +74,7 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.InfoRetrieveMessageEvent, new InfoRetrieveMessageParser() },
         { (int)MessageEvent.EventLogMessageEvent, new EventLogMessageParser() },
         { (int)MessageEvent.GetIgnoredUsersMessageEvent, new GetIgnoredUsersMessageParser() },
-        { (int)MessageEvent.UserNftChatStylesMessageEvent, new GetUserNftChatStylesMessageParser() },
+        { (int)MessageEvent.GetUserNftChatStylesMessageEvent, new GetUserNftChatStylesMessageParser() },
         { (int)MessageEvent.GetMOTDMessageEvent, new GetMOTDMessageParser() },
         { (int)MessageEvent.MessengerInitMessageEvent, new MessengerInitMessageParser() },
         { (int)MessageEvent.NewNavigatorInitEvent, new NewNavigatorInitParser() },

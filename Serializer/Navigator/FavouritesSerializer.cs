@@ -8,7 +8,7 @@ using Turbo.Packets.Outgoing.Navigator;
 using Turbo.Packets.Serializers;
 
 namespace Turbo.WIN63202407091256704579380.Serializer.Navigator;
-public class FavouritesSerializer() : AbstractSerializer<FavouritesMessage>(MessageComposer.FavouritesMessageComposer)
+public class FavouritesSerializer() : AbstractSerializer<FavouritesMessage>(MessageComposer.FavouritesComposer)
 {
     protected override void Serialize(IServerPacket packet, FavouritesMessage message)
     {

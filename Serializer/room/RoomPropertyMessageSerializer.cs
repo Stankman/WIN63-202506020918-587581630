@@ -4,7 +4,7 @@ using Turbo.Packets.Serializers;
 
 namespace Turbo.WIN63202407091256704579380.Serializer.room;
 
-public class RoomPropertyMessageSerializer() : AbstractSerializer<RoomPropertyMessage>(MessageComposer.RoomPropertyMessageEvent)
+public class RoomPropertyMessageSerializer() : AbstractSerializer<RoomPropertyMessage>(MessageComposer.RoomPropertyMessageComposer)
 {
     protected override void Serialize(IServerPacket packet, RoomPropertyMessage message)
     {

@@ -4,7 +4,7 @@ using Turbo.Packets.Serializers;
 
 namespace Turbo.WIN63202407091256704579380.Serializer.Navigator;
 
-public class NavigatorCollapsedCategoriesMessageSerializer() : AbstractSerializer<NavigatorCollapsedCategoriesMessage>(MessageComposer.NavigatorCollapsedCategoriesComposer)
+public class NavigatorCollapsedCategoriesMessageSerializer() : AbstractSerializer<NavigatorCollapsedCategoriesMessage>(MessageComposer.NavigatorCollapsedCategoriesMessageComposer)
 {
     protected override void Serialize(IServerPacket packet, NavigatorCollapsedCategoriesMessage message)
     {
