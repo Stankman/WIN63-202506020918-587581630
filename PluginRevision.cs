@@ -121,6 +121,8 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.GetFurnitureAliasesMessageEvent, new GetFurnitureAliasesMessageParser() },
         { (int)MessageEvent.GetHeightMapMessageEvent, new GetHeightMapMessageParser() },
         { (int)MessageEvent.GetBonusRareInfoMessageEvent, new GetBonusRareInfoParser() },
+        { (int)MessageEvent.ChangeQueueMessageEvent, new ChangeQueueMessageEventParser()},
+        { (int)MessageEvent.QuitMessageEvent, new QuitMessageEventParser()}
     };
 
     public IDictionary<Type, ISerializer> Serializers { get; } = new Dictionary<Type, ISerializer>
