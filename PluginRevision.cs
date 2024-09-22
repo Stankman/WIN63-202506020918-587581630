@@ -168,6 +168,16 @@ public class PluginRevision : IRevision
         { typeof(BonusRareInfoMessage), new BonusRareInfoSerializer() },
         { typeof(MessengerInitMessage), new MessengerInitSerializer() },
         { typeof(FriendListFragmentMessage), new FriendListFragmentSerializer() },
-        { typeof(AccountPreferencesMessage), new AccountPreferencesSerializer() }
+        { typeof(AccountPreferencesMessage), new AccountPreferencesSerializer() },
+        { typeof(CantConnectMessage), new CantConnectMessageSerializer()},
+        { typeof(CloseConnectionMessage), new CloseConnectionMessageSerializer()},
+        { typeof(FlatAccessibleMessage), new FlatAccessibleMessageSerializer()},
+        { typeof(GamePlayerValueMessage), new GamePlayerValueMessageSerializer()},
+        { typeof(GetRoomAdPurchaseInfoMessage), new GetRoomAdPurchaseInfoSerializer()},
+        { typeof(RoomForwardMessage), new RoomForwardMessageSerializer()},
+        { typeof(RoomQueueStatusMessage), new RoomQueueStatusMessageSerializer()},
+        { typeof(YouAreNotSpectatorMessage), new YouAreNotSpectatorMessageSerializer()},
+        { typeof(YouArePlayingGameMessage), new YouArePlayingGameMessageSerializer()},
+        { typeof(YouAreSpectatorMessage), new YouAreSpectatorMessageSerializer()},
     };
 }

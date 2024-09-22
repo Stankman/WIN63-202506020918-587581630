@@ -22,6 +22,26 @@
       </Reference>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Parsers\Room\Action\" />
+      <Folder Include="Parsers\Room\Avatar\" />
+      <Folder Include="Parsers\Room\Bots\" />
+      <Folder Include="Parsers\Room\Camera\" />
+      <Folder Include="Parsers\Room\Chat\" />
+      <Folder Include="Parsers\Room\Furniture\" />
+      <Folder Include="Parsers\Room\Layout\" />
+      <Folder Include="Parsers\Room\Permissions\" />
+      <Folder Include="Parsers\Room\Pets\" />
+      <Folder Include="Serializer\Room\Action\" />
+      <Folder Include="Serializer\Room\Avatar\" />
+      <Folder Include="Serializer\Room\Bots\" />
+      <Folder Include="Serializer\Room\Camera\" />
+      <Folder Include="Serializer\Room\Chat\" />
+      <Folder Include="Serializer\Room\Furniture\" />
+      <Folder Include="Serializer\Room\Layout\" />
+      <Folder Include="Serializer\Room\Pets\" />
+    </ItemGroup>
+
     <Target Name="CopyMainLibrary" AfterTargets="Build">
         <!-- Ensure the output directory exists -->
         <MakeDir Directories="$(PluginOutputPath)" />
