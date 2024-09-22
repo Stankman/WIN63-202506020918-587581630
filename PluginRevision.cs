@@ -56,7 +56,10 @@ using Turbo.Packets.Outgoing.FriendList;
 using Turbo.WIN63202407091256704579380.Serializer.FriendList;
 using Turbo.Packets.Incoming.Nft;
 using Turbo.Packets.Outgoing.Preferences;
+using Turbo.Packets.Outgoing.Room.Layout;
+using Turbo.WIN63202407091256704579380.Parsers.Room.Layout;
 using Turbo.WIN63202407091256704579380.Serializer.Preferences;
+using Turbo.WIN63202407091256704579380.Serializer.Room.Layout;
 using MessengerInitMessage = Turbo.Packets.Outgoing.FriendList.MessengerInitMessage;
 
 namespace Turbo.WIN63202407091256704579380;
@@ -121,8 +124,11 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.GetFurnitureAliasesMessageEvent, new GetFurnitureAliasesMessageParser() },
         { (int)MessageEvent.GetHeightMapMessageEvent, new GetHeightMapMessageParser() },
         { (int)MessageEvent.GetBonusRareInfoMessageEvent, new GetBonusRareInfoParser() },
-        { (int)MessageEvent.ChangeQueueMessageEvent, new ChangeQueueMessageEventParser()},
-        { (int)MessageEvent.QuitMessageEvent, new QuitMessageEventParser()}
+        { (int)MessageEvent.ChangeQueueMessageEvent, new ChangeQueueMessageParser()},
+        { (int)MessageEvent.QuitMessageEvent, new QuitMessageEventParser()},
+        { (int)MessageEvent.GetOccupiedTilesMessageEvent, new GetOccupiedTilesMessageParser() },
+        { (int)MessageEvent.GetRoomEntryTileMessageEvent, new GetRoomEntryTileMessageParser() },
+        { (int)MessageEvent.UpdateFloorPropertiesMessageEvent, new UpdateFloorPropertiesMessageParser() }
     };
 
     public IDictionary<Type, ISerializer> Serializers { get; } = new Dictionary<Type, ISerializer>
@@ -171,15 +177,17 @@ public class PluginRevision : IRevision
         { typeof(MessengerInitMessage), new MessengerInitSerializer() },
         { typeof(FriendListFragmentMessage), new FriendListFragmentSerializer() },
         { typeof(AccountPreferencesMessage), new AccountPreferencesSerializer() },
-        { typeof(CantConnectMessage), new CantConnectMessageSerializer()},
-        { typeof(CloseConnectionMessage), new CloseConnectionMessageSerializer()},
-        { typeof(FlatAccessibleMessage), new FlatAccessibleMessageSerializer()},
-        { typeof(GamePlayerValueMessage), new GamePlayerValueMessageSerializer()},
-        { typeof(GetRoomAdPurchaseInfoMessage), new GetRoomAdPurchaseInfoSerializer()},
-        { typeof(RoomForwardMessage), new RoomForwardMessageSerializer()},
-        { typeof(RoomQueueStatusMessage), new RoomQueueStatusMessageSerializer()},
-        { typeof(YouAreNotSpectatorMessage), new YouAreNotSpectatorMessageSerializer()},
-        { typeof(YouArePlayingGameMessage), new YouArePlayingGameMessageSerializer()},
-        { typeof(YouAreSpectatorMessage), new YouAreSpectatorMessageSerializer()},
+        { typeof(CantConnectMessage), new CantConnectMessageSerializer() },
+        { typeof(CloseConnectionMessage), new CloseConnectionMessageSerializer() },
+        { typeof(FlatAccessibleMessage), new FlatAccessibleMessageSerializer() },
+        { typeof(GamePlayerValueMessage), new GamePlayerValueMessageSerializer() },
+        { typeof(GetRoomAdPurchaseInfoMessage), new GetRoomAdPurchaseInfoSerializer() },
+        { typeof(RoomForwardMessage), new RoomForwardMessageSerializer() },
+        { typeof(RoomQueueStatusMessage), new RoomQueueStatusMessageSerializer() },
+        { typeof(YouAreNotSpectatorMessage), new YouAreNotSpectatorMessageSerializer() },
+        { typeof(YouArePlayingGameMessage), new YouArePlayingGameMessageSerializer() },
+        { typeof(YouAreSpectatorMessage), new YouAreSpectatorMessageSerializer() },
+        { typeof(RoomEntryTileMessage), new RoomEntryTileMessageSerializer() },
+        { typeof(RoomOccupiedTilesMessage), new RoomOccupiedTilesMessageSerializer() }
     };
 }

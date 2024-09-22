@@ -4,7 +4,7 @@ using Turbo.Packets.Parsers;
 
 namespace Turbo.WIN63202407091256704579380.Parsers.room;
 
-public class ChangeQueueMessageEventParser : AbstractParser<ChangeQueueMessage>
+public class ChangeQueueMessageParser : AbstractParser<ChangeQueueMessage>
 {
     public override IMessageEvent Parse(IClientPacket packet) => new ChangeQueueMessage
     {
