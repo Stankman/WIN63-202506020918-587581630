@@ -63,6 +63,9 @@ using Turbo.WIN63202407091256704579380.Serializer.Room.Layout;
 using MessengerInitMessage = Turbo.Packets.Outgoing.FriendList.MessengerInitMessage;
 using Turbo.WIN63202407091256704579380.Serializer.Perk;
 using Turbo.Packets.Outgoing.Perk;
+using Turbo.Packets.Outgoing.Room.Chat;
+using Turbo.WIN63202407091256704579380.Parsers.Room.Chat;
+using Turbo.WIN63202407091256704579380.Serializer.Room.Chat;
 
 namespace Turbo.WIN63202407091256704579380;
 
@@ -126,11 +129,18 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.GetFurnitureAliasesMessageEvent, new GetFurnitureAliasesMessageParser() },
         { (int)MessageEvent.GetHeightMapMessageEvent, new GetHeightMapMessageParser() },
         { (int)MessageEvent.GetBonusRareInfoMessageEvent, new GetBonusRareInfoParser() },
-        { (int)MessageEvent.ChangeQueueMessageEvent, new ChangeQueueMessageParser()},
-        { (int)MessageEvent.QuitMessageEvent, new QuitMessageEventParser()},
+        { (int)MessageEvent.ChangeQueueMessageEvent, new ChangeQueueMessageParser() },
+        { (int)MessageEvent.QuitMessageEvent, new QuitMessageEventParser() },
         { (int)MessageEvent.GetOccupiedTilesMessageEvent, new GetOccupiedTilesMessageParser() },
         { (int)MessageEvent.GetRoomEntryTileMessageEvent, new GetRoomEntryTileMessageParser() },
-        { (int)MessageEvent.UpdateFloorPropertiesMessageEvent, new UpdateFloorPropertiesMessageParser() }
+        { (int)MessageEvent.UpdateFloorPropertiesMessageEvent, new UpdateFloorPropertiesMessageParser() },
+        { (int)MessageEvent.MoveAvatarMessageEvent, new MoveAvatarMessageParser() },
+        { (int)MessageEvent.ChatMessageEvent, new ChatMessageParser() },
+        { (int)MessageEvent.CancelTypingMessageEvent, new CancelTypingMessageParser() },
+        { (int)MessageEvent.ShoutMessageEvent, new ShoutMessageParser() },
+        { (int)MessageEvent.StartTypingMessageEvent, new StartTypingMessageParser() },
+        { (int)MessageEvent.WhisperMessageEvent, new WhisperMessageParser() },
+        
     };
 
     public IDictionary<Type, ISerializer> Serializers { get; } = new Dictionary<Type, ISerializer>
@@ -194,6 +204,33 @@ public class PluginRevision : IRevision
         { typeof(PerkAllowancesMessage), new PerkAllowancesMessageSerializer() },
         { typeof(HeightMapMessage), new HeightMapMessageSerializer() },
         { typeof(FloorHeightMapMessage), new FloorHeightMapMessageSerializer() },
-        {typeof(RoomVisualizationSettingsMessage), new RoomVisualizationSettingsMessageSerializer() }
+        {typeof(RoomVisualizationSettingsMessage), new RoomVisualizationSettingsMessageSerializer() },
+        {typeof(UsersMessage), new UsersMessageSerializer() },
+        {typeof(UserUpdateMessage), new UserUpdateMessageSerializer() },
+        {typeof(UserRemoveMessage), new UserRemoveMessageSerializer() },
+        {typeof(UserChangeMessage), new UserChangeMessageSerializer() },
+        {typeof(FavouriteMembershipUpdateMessage), new FavouriteMembershipUpdateMessageSerializer() },
+        {typeof(HeightMapUpdateMessage), new HeightMapUpdateMessageSerializer() },
+        {typeof(ItemAddMessage), new ItemAddMessageSerializer() },
+        {typeof(ItemDataUpdateMessage), new ItemDataUpdateMessageSerializer() },
+        {typeof(ItemRemoveMessage), new ItemRemoveMessageSerializer() },
+        {typeof(ItemsMessage), new ItemsMessageSerializer() },
+        {typeof(ItemUpdateMessage), new ItemUpdateMessageSerializer() },
+        {typeof(ObjectAddMessage), new ObjectAddMessageSerializer() },
+        {typeof(ObjectDataUpdateMessage), new ObjectDataUpdateMessageSerializer() },
+        {typeof(ObjectRemoveMessage), new ObjectRemoveMessageSerializer() },
+        {typeof(ObjectsDataUpdateMessage), new ObjectsDataUpdateMessageSerializer() },
+        {typeof(ObjectsMessage), new ObjectsMessageSerializer() },
+        {typeof(ObjectUpdateMessage), new ObjectUpdateMessageSerializer() },
+        {typeof(RoomEntryInfoMessage), new RoomEntryInfoMessageSerializer() },
+        {typeof(SlideObjectBundleMessage), new SlideObjectBundleMessageSerializer() },
+        {typeof(ChatMessage), new ChatMessageSerializer() },
+        {typeof(WhisperMessage), new WhisperMessageSerializer() },
+        {typeof(ShoutMessage), new ShoutMessageSerializer() },
+        {typeof(FloodControlMessage), new FloodControlMessageSerializer() },
+        {typeof(RemainingMutePeriodMessageSerializer), new RemainingMutePeriodMessageSerializer() },
+        {typeof(RoomChatSettingsMessage), new RoomChatSettingsMessageSerializer() },
+        {typeof(RoomFilterSettingsMessage), new RoomFilterSettingsMessageSerializer() },
+        {typeof(UserTypingMessage), new UserTypingMessageSerializer() },
     };
 }
