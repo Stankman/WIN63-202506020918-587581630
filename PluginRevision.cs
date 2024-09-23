@@ -191,6 +191,9 @@ public class PluginRevision : IRevision
         { typeof(YouAreSpectatorMessage), new YouAreSpectatorMessageSerializer() },
         { typeof(RoomEntryTileMessage), new RoomEntryTileMessageSerializer() },
         { typeof(RoomOccupiedTilesMessage), new RoomOccupiedTilesMessageSerializer() },
-        { typeof(PerkAllowancesMessage), new PerkAllowancesMessageSerializer() }
+        { typeof(PerkAllowancesMessage), new PerkAllowancesMessageSerializer() },
+        { typeof(HeightMapMessage), new HeightMapMessageSerializer() },
+        { typeof(FloorHeightMapMessage), new FloorHeightMapMessageSerializer() },
+        {typeof(RoomVisualizationSettingsMessage), new RoomVisualizationSettingsMessageSerializer() }
     };
 }
