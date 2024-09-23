@@ -14,8 +14,7 @@ public class HeightMapMessageSerializer() : AbstractSerializer<HeightMapMessage>
         
         foreach(IRoomTile tile in message.RoomMap.Tiles)
         {
-            if (tile.State == RoomTileState.Closed) packet.WriteShort(-1);
-            else packet.WriteShort((short)tile.RelativeHeight);
+            packet.WriteShort(tile.RelativeHeight);
         }
     }
 }
