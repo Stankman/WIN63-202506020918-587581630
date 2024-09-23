@@ -61,6 +61,8 @@ using Turbo.WIN63202407091256704579380.Parsers.Room.Layout;
 using Turbo.WIN63202407091256704579380.Serializer.Preferences;
 using Turbo.WIN63202407091256704579380.Serializer.Room.Layout;
 using MessengerInitMessage = Turbo.Packets.Outgoing.FriendList.MessengerInitMessage;
+using Turbo.WIN63202407091256704579380.Serializer.Perk;
+using Turbo.Packets.Outgoing.Perk;
 
 namespace Turbo.WIN63202407091256704579380;
 
@@ -188,6 +190,7 @@ public class PluginRevision : IRevision
         { typeof(YouArePlayingGameMessage), new YouArePlayingGameMessageSerializer() },
         { typeof(YouAreSpectatorMessage), new YouAreSpectatorMessageSerializer() },
         { typeof(RoomEntryTileMessage), new RoomEntryTileMessageSerializer() },
-        { typeof(RoomOccupiedTilesMessage), new RoomOccupiedTilesMessageSerializer() }
+        { typeof(RoomOccupiedTilesMessage), new RoomOccupiedTilesMessageSerializer() },
+        { typeof(PerkAllowancesMessage), new PerkAllowancesMessageSerializer() }
     };
 }
