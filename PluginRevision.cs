@@ -1,9 +1,6 @@
 ﻿using Turbo.Core.Packets.Messages;
 using Turbo.Core.Packets.Revisions;
-using Turbo.Packets.Incoming.FriendList;
-using Turbo.Packets.Incoming.Navigator;
 using Turbo.Packets.Outgoing.Advertising;
-using Turbo.Packets.Incoming.Tracking;
 using Turbo.Packets.Outgoing.Availability;
 using Turbo.Packets.Outgoing.Competition;
 using Turbo.Packets.Outgoing.Handshake;
@@ -54,7 +51,6 @@ using Turbo.Packets.Outgoing.Inventory.Purse;
 using Turbo.WIN63202407091256704579380.Serializer.Inventory.Purse;
 using Turbo.Packets.Outgoing.FriendList;
 using Turbo.WIN63202407091256704579380.Serializer.FriendList;
-using Turbo.Packets.Incoming.Nft;
 using Turbo.Packets.Outgoing.Preferences;
 using Turbo.Packets.Outgoing.Room.Layout;
 using Turbo.WIN63202407091256704579380.Parsers.Room.Layout;
@@ -66,6 +62,7 @@ using Turbo.Packets.Outgoing.Perk;
 using Turbo.Packets.Outgoing.Room.Chat;
 using Turbo.WIN63202407091256704579380.Parsers.Room.Chat;
 using Turbo.WIN63202407091256704579380.Serializer.Room.Chat;
+using CanCreateRoomMessage = Turbo.Packets.Outgoing.Navigator.CanCreateRoomMessage;
 
 namespace Turbo.WIN63202407091256704579380;
 
@@ -232,5 +229,7 @@ public class PluginRevision : IRevision
         {typeof(RoomChatSettingsMessage), new RoomChatSettingsMessageSerializer() },
         {typeof(RoomFilterSettingsMessage), new RoomFilterSettingsMessageSerializer() },
         {typeof(UserTypingMessage), new UserTypingMessageSerializer() },
+        {typeof(FlatCreatedMessage), new FlatCreatedSerializer() },
+        {typeof(CanCreateRoomMessage), new CanCreateRoomSerializer() }
     };
 }
