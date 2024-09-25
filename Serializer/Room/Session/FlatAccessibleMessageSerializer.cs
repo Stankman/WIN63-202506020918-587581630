@@ -8,6 +8,7 @@ public class FlatAccessibleMessageSerializer() : AbstractSerializer<FlatAccessib
 {
     protected override void Serialize(IServerPacket packet, FlatAccessibleMessage message)
     {
+        packet.WriteInteger(message.RoomId);
         packet.WriteString(message.Username);
     }
 }
