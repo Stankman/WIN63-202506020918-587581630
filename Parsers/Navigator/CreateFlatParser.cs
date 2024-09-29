@@ -1,4 +1,3 @@
-using Turbo.Core.Game.Navigator.Constants;
 using Turbo.Core.Game.Rooms.Constants;
 using Turbo.Core.Packets.Messages;
 using Turbo.Packets.Incoming.Navigator;
@@ -17,9 +16,9 @@ public class CreateFlatParser : AbstractParser<CreateFlatMessage>
         var maxPlayers = packet.PopInt();
         var tradeType = packet.PopInt();
 
-        RoomTradeType tradeSetting = tradeType switch
+        var tradeSetting = tradeType switch
         {
-            1 => RoomTradeType.RoomOwner,
+            1 => RoomTradeType.RoomOwnerAndRights,
             2 => RoomTradeType.Everyone,
             _ => RoomTradeType.Disabled
         };
