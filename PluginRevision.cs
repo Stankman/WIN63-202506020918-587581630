@@ -1,17 +1,28 @@
 ﻿using Turbo.Core.Packets.Messages;
 using Turbo.Core.Packets.Revisions;
-using Turbo.Packets.Incoming.FriendList;
-using Turbo.Packets.Incoming.Navigator;
 using Turbo.Packets.Outgoing.Advertising;
-using Turbo.Packets.Incoming.Tracking;
 using Turbo.Packets.Outgoing.Availability;
+using Turbo.Packets.Outgoing.CallForHelp;
+using Turbo.Packets.Outgoing.Catalog;
+using Turbo.Packets.Outgoing.Catalog.Clothing;
 using Turbo.Packets.Outgoing.Competition;
+using Turbo.Packets.Outgoing.FriendList;
 using Turbo.Packets.Outgoing.Handshake;
+using Turbo.Packets.Outgoing.Inventory.Achievements;
+using Turbo.Packets.Outgoing.Inventory.Purse;
+using Turbo.Packets.Outgoing.MysteryBox;
 using Turbo.Packets.Outgoing.Navigator;
+using Turbo.Packets.Outgoing.Notifications;
+using Turbo.Packets.Outgoing.Perk;
+using Turbo.Packets.Outgoing.Preferences;
+using Turbo.Packets.Outgoing.Room.Action;
+using Turbo.Packets.Outgoing.Room.Chat;
 using Turbo.Packets.Outgoing.Room.Engine;
+using Turbo.Packets.Outgoing.Room.Layout;
 using Turbo.Packets.Outgoing.Room.Permissions;
 using Turbo.Packets.Outgoing.Room.Session;
 using Turbo.Packets.Outgoing.Tracking;
+using Turbo.Packets.Outgoing.Users;
 using Turbo.WIN63202407091256704579380.Parsers.Advertising;
 using Turbo.WIN63202407091256704579380.Parsers.Catalog;
 using Turbo.WIN63202407091256704579380.Parsers.Competition;
@@ -24,48 +35,33 @@ using Turbo.WIN63202407091256704579380.Parsers.Navigator;
 using Turbo.WIN63202407091256704579380.Parsers.NewNavigator;
 using Turbo.WIN63202407091256704579380.Parsers.Nft;
 using Turbo.WIN63202407091256704579380.Parsers.room;
+using Turbo.WIN63202407091256704579380.Parsers.Room.Chat;
+using Turbo.WIN63202407091256704579380.Parsers.Room.Layout;
 using Turbo.WIN63202407091256704579380.Parsers.SoundSettings;
 using Turbo.WIN63202407091256704579380.Parsers.Tracking;
 using Turbo.WIN63202407091256704579380.Parsers.Users;
 using Turbo.WIN63202407091256704579380.Serializer.Advertising;
 using Turbo.WIN63202407091256704579380.Serializer.Availability;
-using Turbo.WIN63202407091256704579380.Serializer.Competition;
-using Turbo.WIN63202407091256704579380.Serializer.Handshake;
-using Turbo.WIN63202407091256704579380.Serializer.Navigator;
-using Turbo.WIN63202407091256704579380.Serializer.room;
-using Turbo.WIN63202407091256704579380.Serializer.Tracking;
-using Turbo.WIN63202407091256704579380.Serializer.Inventory.AvatarEffect;
-using Turbo.Packets.Outgoing.Room.Action;
-using Turbo.Packets.Outgoing.Users;
-using Turbo.WIN63202407091256704579380.Serializer.User;
-using Turbo.Packets.Outgoing.Notifications;
-using Turbo.Packets.Outgoing.Catalog.Clothing;
-using Turbo.WIN63202407091256704579380.Serializer.Catalog.Clothing;
-using Turbo.WIN63202407091256704579380.Serializer.Notifications;
-using Turbo.Packets.Outgoing.Inventory.Achievements;
-using Turbo.WIN63202407091256704579380.Serializer.Inventory.Achievements;
-using Turbo.Packets.Outgoing.MysteryBox;
-using Turbo.WIN63202407091256704579380.Serializer.MysteryBox;
-using Turbo.Packets.Outgoing.Catalog;
-using Turbo.WIN63202407091256704579380.Serializer.Catalog;
-using Turbo.Packets.Outgoing.CallForHelp;
 using Turbo.WIN63202407091256704579380.Serializer.CallForHelp;
-using Turbo.Packets.Outgoing.Inventory.Purse;
-using Turbo.WIN63202407091256704579380.Serializer.Inventory.Purse;
-using Turbo.Packets.Outgoing.FriendList;
+using Turbo.WIN63202407091256704579380.Serializer.Catalog;
+using Turbo.WIN63202407091256704579380.Serializer.Catalog.Clothing;
+using Turbo.WIN63202407091256704579380.Serializer.Competition;
 using Turbo.WIN63202407091256704579380.Serializer.FriendList;
-using Turbo.Packets.Incoming.Nft;
-using Turbo.Packets.Outgoing.Preferences;
-using Turbo.Packets.Outgoing.Room.Layout;
-using Turbo.WIN63202407091256704579380.Parsers.Room.Layout;
-using Turbo.WIN63202407091256704579380.Serializer.Preferences;
-using Turbo.WIN63202407091256704579380.Serializer.Room.Layout;
-using MessengerInitMessage = Turbo.Packets.Outgoing.FriendList.MessengerInitMessage;
+using Turbo.WIN63202407091256704579380.Serializer.Handshake;
+using Turbo.WIN63202407091256704579380.Serializer.Inventory.Achievements;
+using Turbo.WIN63202407091256704579380.Serializer.Inventory.AvatarEffect;
+using Turbo.WIN63202407091256704579380.Serializer.Inventory.Purse;
+using Turbo.WIN63202407091256704579380.Serializer.MysteryBox;
+using Turbo.WIN63202407091256704579380.Serializer.Navigator;
+using Turbo.WIN63202407091256704579380.Serializer.Notifications;
 using Turbo.WIN63202407091256704579380.Serializer.Perk;
-using Turbo.Packets.Outgoing.Perk;
-using Turbo.Packets.Outgoing.Room.Chat;
-using Turbo.WIN63202407091256704579380.Parsers.Room.Chat;
+using Turbo.WIN63202407091256704579380.Serializer.Preferences;
+using Turbo.WIN63202407091256704579380.Serializer.room;
 using Turbo.WIN63202407091256704579380.Serializer.Room.Chat;
+using Turbo.WIN63202407091256704579380.Serializer.Room.Layout;
+using Turbo.WIN63202407091256704579380.Serializer.Tracking;
+using Turbo.WIN63202407091256704579380.Serializer.User;
+using MessengerInitMessage = Turbo.Packets.Outgoing.FriendList.MessengerInitMessage;
 
 namespace Turbo.WIN63202407091256704579380;
 
@@ -91,24 +87,29 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.GetUserEventCatsMessageEvent, new GetUserEventCatsParser() },
         { (int)MessageEvent.CanCreateRoomMessageEvent, new CanCreateRoomParser() },
         { (int)MessageEvent.ForwardToSomeRoomMessageEvent, new ForwardToSomeRoomParser() },
-        { (int)MessageEvent.SetNewNavigatorWindowPreferencesMessageEvent, new SetNewNavigatorWindowPreferencesMessageParser()},
-        { (int)MessageEvent.CreateFlatMessageEvent, new CreateFlatParser()},
-        { (int)MessageEvent.GetPopularRoomTagsMessageEvent, new GetPopularRoomTagsParser()},
-        { (int)MessageEvent.GetGuestRoomMessageEvent, new GetGuestRoomParser()},
-        { (int)MessageEvent.MyFavouriteRoomsSearchMessageEvent, new MyFavouriteRoomsSearchParser()},
-        { (int)MessageEvent.MyFriendsRoomsSearchMessageEvent, new MyFriendsRoomsSearchParser()},
-        { (int)MessageEvent.MyGuildBasesSearchMessageEvent, new MyGuildBasesSearchParser()},
-        { (int)MessageEvent.MyRoomHistorySearchMessageEvent, new MyRoomHistorySearchParser()},
-        { (int)MessageEvent.MyRoomRightsSearchMessageEvent, new MyRoomRightsSearchParser()},
-        { (int)MessageEvent.MyRoomsSearchMessageEvent, new MyRoomsSearchParser()},
-        { (int)MessageEvent.NavigatorAddCollapsedCategoryMessageEvent, new NavigatorAddCollapsedCategoryParser()},
-        { (int)MessageEvent.NavigatorAddSavedSearchEvent, new NavigatorAddSavedSearchParser()},
-        { (int)MessageEvent.NavigatorDeleteSavedSearchEvent, new NavigatorDeleteSavedSearchParser()},
-        { (int)MessageEvent.NavigatorRemoveCollapsedCategoryMessageEvent, new NavigatorRemoveCollapsedCategoryParser()},
-        { (int)MessageEvent.NavigatorSetSearchCodeViewModeMessageEvent, new NavigatorSetSearchCodeViewModeParser()},
-        { (int)MessageEvent.PopularRoomsSearchMessageEvent, new PopularRoomsSearchMessageParser()},
-        { (int)MessageEvent.RoomsWhereMyFriendsAreSearchMessageEvent, new RoomsWhereMyFriendsAreSearchParser()},
-        { (int)MessageEvent.RoomsWithHighestScoreSearchMessageEvent, new RoomsWithHighestScoreSearchParser()},
+        {
+            (int)MessageEvent.SetNewNavigatorWindowPreferencesMessageEvent,
+            new SetNewNavigatorWindowPreferencesMessageParser()
+        },
+        { (int)MessageEvent.CreateFlatMessageEvent, new CreateFlatParser() },
+        { (int)MessageEvent.GetPopularRoomTagsMessageEvent, new GetPopularRoomTagsParser() },
+        { (int)MessageEvent.GetGuestRoomMessageEvent, new GetGuestRoomParser() },
+        { (int)MessageEvent.MyFavouriteRoomsSearchMessageEvent, new MyFavouriteRoomsSearchParser() },
+        { (int)MessageEvent.MyFriendsRoomsSearchMessageEvent, new MyFriendsRoomsSearchParser() },
+        { (int)MessageEvent.MyGuildBasesSearchMessageEvent, new MyGuildBasesSearchParser() },
+        { (int)MessageEvent.MyRoomHistorySearchMessageEvent, new MyRoomHistorySearchParser() },
+        { (int)MessageEvent.MyRoomRightsSearchMessageEvent, new MyRoomRightsSearchParser() },
+        { (int)MessageEvent.MyRoomsSearchMessageEvent, new MyRoomsSearchParser() },
+        { (int)MessageEvent.NavigatorAddCollapsedCategoryMessageEvent, new NavigatorAddCollapsedCategoryParser() },
+        { (int)MessageEvent.NavigatorAddSavedSearchEvent, new NavigatorAddSavedSearchParser() },
+        { (int)MessageEvent.NavigatorDeleteSavedSearchEvent, new NavigatorDeleteSavedSearchParser() },
+        {
+            (int)MessageEvent.NavigatorRemoveCollapsedCategoryMessageEvent, new NavigatorRemoveCollapsedCategoryParser()
+        },
+        { (int)MessageEvent.NavigatorSetSearchCodeViewModeMessageEvent, new NavigatorSetSearchCodeViewModeParser() },
+        { (int)MessageEvent.PopularRoomsSearchMessageEvent, new PopularRoomsSearchMessageParser() },
+        { (int)MessageEvent.RoomsWhereMyFriendsAreSearchMessageEvent, new RoomsWhereMyFriendsAreSearchParser() },
+        { (int)MessageEvent.RoomsWithHighestScoreSearchMessageEvent, new RoomsWithHighestScoreSearchParser() },
         { (int)MessageEvent.GetCreditsInfoEvent, new GetCreditsInfoParser() },
         { (int)MessageEvent.GetNftCreditsMessageEvent, new GetNftCreditsMessageParser() },
         { (int)MessageEvent.GetSilverMessageEvent, new GetSilverMessageParser() },
@@ -140,7 +141,8 @@ public class PluginRevision : IRevision
         { (int)MessageEvent.ShoutMessageEvent, new ShoutMessageParser() },
         { (int)MessageEvent.StartTypingMessageEvent, new StartTypingMessageParser() },
         { (int)MessageEvent.WhisperMessageEvent, new WhisperMessageParser() },
-        
+        { (int)MessageEvent.AddFavouriteRoomMessageEvent, new AddFavouriteRoomParser() },
+        { (int)MessageEvent.DeleteFavouriteRoomMessageEvent, new DeleteFavouriteRoomParser() }
     };
 
     public IDictionary<Type, ISerializer> Serializers { get; } = new Dictionary<Type, ISerializer>
@@ -150,6 +152,7 @@ public class PluginRevision : IRevision
         { typeof(AuthenticationOKMessage), new AuthenticationOKMessageSerializer() },
         { typeof(AvatarEffectMessage), new AvatarEffectsSerializer() },
         { typeof(FavouritesMessage), new FavouritesSerializer() },
+        { typeof(FavouriteChangedMessage), new FavouriteChangedMessageSerializer() },
         { typeof(ScrSendUserInfoMessage), new ScrSendUserInfoSerializer() },
         { typeof(FigureSetIdsMessage), new FigureSetIdsSerializer() },
         { typeof(NoobnessLevelMessage), new NoobnessLevelSerializer() },
@@ -170,8 +173,8 @@ public class PluginRevision : IRevision
         { typeof(PingMessage), new PingMessageSerializer() },
         { typeof(OpenConnectionMessage), new OpenConnectionMessageSerializer() },
         { typeof(InterstitialMessage), new InterstitialMessageSerializer() },
-        { typeof(RoomReadyMessage), new RoomReadyMessageSerializer()},
-        { typeof(RoomPropertyMessage), new RoomPropertyMessageSerializer()},
+        { typeof(RoomReadyMessage), new RoomReadyMessageSerializer() },
+        { typeof(RoomPropertyMessage), new RoomPropertyMessageSerializer() },
         { typeof(YouAreControllerMessage), new YouAreControllerMessageSerializer() },
         { typeof(FurnitureAliasesMessage), new FurnitureAliasesMessageSerializer() },
         { typeof(GetGuestRoomResultMessage), new GetGuestRoomResultSerializer() },
@@ -204,33 +207,33 @@ public class PluginRevision : IRevision
         { typeof(PerkAllowancesMessage), new PerkAllowancesMessageSerializer() },
         { typeof(HeightMapMessage), new HeightMapMessageSerializer() },
         { typeof(FloorHeightMapMessage), new FloorHeightMapMessageSerializer() },
-        {typeof(RoomVisualizationSettingsMessage), new RoomVisualizationSettingsMessageSerializer() },
-        {typeof(UsersMessage), new UsersMessageSerializer() },
-        {typeof(UserUpdateMessage), new UserUpdateMessageSerializer() },
-        {typeof(UserRemoveMessage), new UserRemoveMessageSerializer() },
-        {typeof(UserChangeMessage), new UserChangeMessageSerializer() },
-        {typeof(FavouriteMembershipUpdateMessage), new FavouriteMembershipUpdateMessageSerializer() },
-        {typeof(HeightMapUpdateMessage), new HeightMapUpdateMessageSerializer() },
-        {typeof(ItemAddMessage), new ItemAddMessageSerializer() },
-        {typeof(ItemDataUpdateMessage), new ItemDataUpdateMessageSerializer() },
-        {typeof(ItemRemoveMessage), new ItemRemoveMessageSerializer() },
-        {typeof(ItemsMessage), new ItemsMessageSerializer() },
-        {typeof(ItemUpdateMessage), new ItemUpdateMessageSerializer() },
-        {typeof(ObjectAddMessage), new ObjectAddMessageSerializer() },
-        {typeof(ObjectDataUpdateMessage), new ObjectDataUpdateMessageSerializer() },
-        {typeof(ObjectRemoveMessage), new ObjectRemoveMessageSerializer() },
-        {typeof(ObjectsDataUpdateMessage), new ObjectsDataUpdateMessageSerializer() },
-        {typeof(ObjectsMessage), new ObjectsMessageSerializer() },
-        {typeof(ObjectUpdateMessage), new ObjectUpdateMessageSerializer() },
-        {typeof(RoomEntryInfoMessage), new RoomEntryInfoMessageSerializer() },
-        {typeof(SlideObjectBundleMessage), new SlideObjectBundleMessageSerializer() },
-        {typeof(ChatMessage), new ChatMessageSerializer() },
-        {typeof(WhisperMessage), new WhisperMessageSerializer() },
-        {typeof(ShoutMessage), new ShoutMessageSerializer() },
-        {typeof(FloodControlMessage), new FloodControlMessageSerializer() },
-        {typeof(RemainingMutePeriodMessageSerializer), new RemainingMutePeriodMessageSerializer() },
-        {typeof(RoomChatSettingsMessage), new RoomChatSettingsMessageSerializer() },
-        {typeof(RoomFilterSettingsMessage), new RoomFilterSettingsMessageSerializer() },
-        {typeof(UserTypingMessage), new UserTypingMessageSerializer() },
+        { typeof(RoomVisualizationSettingsMessage), new RoomVisualizationSettingsMessageSerializer() },
+        { typeof(UsersMessage), new UsersMessageSerializer() },
+        { typeof(UserUpdateMessage), new UserUpdateMessageSerializer() },
+        { typeof(UserRemoveMessage), new UserRemoveMessageSerializer() },
+        { typeof(UserChangeMessage), new UserChangeMessageSerializer() },
+        { typeof(FavouriteMembershipUpdateMessage), new FavouriteMembershipUpdateMessageSerializer() },
+        { typeof(HeightMapUpdateMessage), new HeightMapUpdateMessageSerializer() },
+        { typeof(ItemAddMessage), new ItemAddMessageSerializer() },
+        { typeof(ItemDataUpdateMessage), new ItemDataUpdateMessageSerializer() },
+        { typeof(ItemRemoveMessage), new ItemRemoveMessageSerializer() },
+        { typeof(ItemsMessage), new ItemsMessageSerializer() },
+        { typeof(ItemUpdateMessage), new ItemUpdateMessageSerializer() },
+        { typeof(ObjectAddMessage), new ObjectAddMessageSerializer() },
+        { typeof(ObjectDataUpdateMessage), new ObjectDataUpdateMessageSerializer() },
+        { typeof(ObjectRemoveMessage), new ObjectRemoveMessageSerializer() },
+        { typeof(ObjectsDataUpdateMessage), new ObjectsDataUpdateMessageSerializer() },
+        { typeof(ObjectsMessage), new ObjectsMessageSerializer() },
+        { typeof(ObjectUpdateMessage), new ObjectUpdateMessageSerializer() },
+        { typeof(RoomEntryInfoMessage), new RoomEntryInfoMessageSerializer() },
+        { typeof(SlideObjectBundleMessage), new SlideObjectBundleMessageSerializer() },
+        { typeof(ChatMessage), new ChatMessageSerializer() },
+        { typeof(WhisperMessage), new WhisperMessageSerializer() },
+        { typeof(ShoutMessage), new ShoutMessageSerializer() },
+        { typeof(FloodControlMessage), new FloodControlMessageSerializer() },
+        { typeof(RemainingMutePeriodMessageSerializer), new RemainingMutePeriodMessageSerializer() },
+        { typeof(RoomChatSettingsMessage), new RoomChatSettingsMessageSerializer() },
+        { typeof(RoomFilterSettingsMessage), new RoomFilterSettingsMessageSerializer() },
+        { typeof(UserTypingMessage), new UserTypingMessageSerializer() }
     };
 }
