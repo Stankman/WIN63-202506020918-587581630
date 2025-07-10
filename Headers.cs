@@ -1,4 +1,6 @@
 ﻿using JetBrains.Annotations;
+using System.Reflection.PortableExecutable;
+using Turbo.WIN63202407091256704579380.Parsers.Catalog;
 
 namespace Turbo.WIN63202407091256704579380;
 
@@ -931,7 +933,7 @@ public enum MessageEvent
     SaveRoomSettingsMessageEvent = 966,
     UpdateRoomCategoryAndTradeSettingsEvent = 201,
     UpdateRoomFilterMessageEvent = 1847,
-    RequestFurniInventoryEvent = 3181,
+    RequestFurniInventoryEveGetGuestRoomMessagent = 3181,
     RequestFurniInventoryWhenNotInRoomEvent = 3468,
     RequestRoomPropertySet = 2982,
     Game2GetFriendsLeaderboardEvent = 1959,
@@ -996,5 +998,5 @@ public enum MessageEvent
     UpdateConditionMessageEvent = 2641,
     UpdateSelectorMessageEvent = 2159,
     UpdateTriggerMessageEvent = 2901,
-    UpdateVariableMessageEvent = 372,
+    UpdateVariableMessageEvent = 372
 }
