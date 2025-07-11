@@ -8,8 +8,8 @@ public class RoomVisualizationSettingsMessageSerializer() : AbstractSerializer<R
 {
     protected override void Serialize(IServerPacket packet, RoomVisualizationSettingsMessage message)
     {
-        packet.WriteBoolean(message.WallsHidden);
         packet.WriteInteger(message.WallThickness);
         packet.WriteInteger(message.FloorThickness);
+        packet.WriteBoolean(message.WallsHidden);
     }
 }

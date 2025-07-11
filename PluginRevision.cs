@@ -375,7 +375,5 @@ public class PluginRevision : IRevision
         //2602	VersionCheckMessageComposer
         //1390	UniqueIDMessageComposer
         //3967	Game2GetAccountGameStatusMessageComposer
-
-        //2798	HabboGroupBadgesMessageEvent
     };
 }
