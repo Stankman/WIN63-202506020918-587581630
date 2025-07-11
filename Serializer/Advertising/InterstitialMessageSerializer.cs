@@ -8,7 +8,8 @@ public class InterstitialMessageSerializer() : AbstractSerializer<InterstitialMe
 {
     protected override void Serialize(IServerPacket packet, InterstitialMessage message)
     {
-        packet.WriteString(message.imageUrl)
-            .WriteString(message.clickUrl);
+        packet.WriteBoolean(false);
+        //packet.WriteString(message.imageUrl)
+        //    .WriteString(message.clickUrl);
     }
 }

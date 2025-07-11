@@ -505,6 +505,8 @@ public static class MessageComposer
     public const int WiredRewardResultMessageComposer = 1758;
     public const int WiredSaveSuccessComposer = 1373;
     public const int WiredValidationErrorComposer = 3766;
+
+    public static int RoomEventComposer { get; internal set; }
 }
 
 [PublicAPI]

@@ -39,7 +39,6 @@
       <Folder Include="Parsers\Room\Pets\" />
       <Folder Include="Serializer\Room\Avatar\" />
       <Folder Include="Serializer\Room\Bots\" />
-      <Folder Include="Serializer\Room\Camera\" />
       <Folder Include="Serializer\Room\Chat\" />
       <Folder Include="Serializer\Room\Furniture\" />
       <Folder Include="Serializer\Room\Layout\" />

@@ -5,10 +5,12 @@ using Turbo.Packets.Incoming.Catalog;
 using Turbo.Packets.Outgoing.Advertising;
 using Turbo.Packets.Outgoing.Availability;
 using Turbo.Packets.Outgoing.CallForHelp;
+using Turbo.Packets.Outgoing.Camera;
 using Turbo.Packets.Outgoing.Catalog;
 using Turbo.Packets.Outgoing.Catalog.Clothing;
 using Turbo.Packets.Outgoing.Competition;
 using Turbo.Packets.Outgoing.FriendList;
+using Turbo.Packets.Outgoing.GroupForums;
 using Turbo.Packets.Outgoing.Handshake;
 using Turbo.Packets.Outgoing.Inventory.Achievements;
 using Turbo.Packets.Outgoing.Inventory.Furni;
@@ -27,6 +29,7 @@ using Turbo.Packets.Outgoing.Room.Permissions;
 using Turbo.Packets.Outgoing.Room.Session;
 using Turbo.Packets.Outgoing.RoomSettings;
 using Turbo.Packets.Outgoing.Tracking;
+using Turbo.Packets.Outgoing.UserDefinedRoomEvents.WiredMenu;
 using Turbo.Packets.Outgoing.Users;
 using Turbo.WIN63202407091256704579380.Parsers.Advertising;
 using Turbo.WIN63202407091256704579380.Parsers.Camera;
@@ -58,11 +61,13 @@ using Turbo.WIN63202407091256704579380.Parsers.Users;
 using Turbo.WIN63202407091256704579380.Serializer.Advertising;
 using Turbo.WIN63202407091256704579380.Serializer.Availability;
 using Turbo.WIN63202407091256704579380.Serializer.CallForHelp;
+using Turbo.WIN63202407091256704579380.Serializer.Camera;
 using Turbo.WIN63202407091256704579380.Serializer.Catalog;
 using Turbo.WIN63202407091256704579380.Serializer.Catalog.Clothing;
 using Turbo.WIN63202407091256704579380.Serializer.Catalog.Marketplace;
 using Turbo.WIN63202407091256704579380.Serializer.Competition;
 using Turbo.WIN63202407091256704579380.Serializer.FriendList;
+using Turbo.WIN63202407091256704579380.Serializer.GroupForums;
 using Turbo.WIN63202407091256704579380.Serializer.Handshake;
 using Turbo.WIN63202407091256704579380.Serializer.Inventory.Achievements;
 using Turbo.WIN63202407091256704579380.Serializer.Inventory.AvatarEffect;
@@ -78,8 +83,10 @@ using Turbo.WIN63202407091256704579380.Serializer.Room.Action;
 using Turbo.WIN63202407091256704579380.Serializer.Room.Chat;
 using Turbo.WIN63202407091256704579380.Serializer.Room.Layout;
 using Turbo.WIN63202407091256704579380.Serializer.Room.Permissions;
+using Turbo.WIN63202407091256704579380.Serializer.Room.Session;
 using Turbo.WIN63202407091256704579380.Serializer.Tracking;
 using Turbo.WIN63202407091256704579380.Serializer.User;
+using Turbo.WIN63202407091256704579380.Serializer.UserDefinedRoomEvents.WiredMenu;
 using Turbo.WIN63202407091256704579380.Serializers.RoomSettings;
 using CanCreateRoomMessage = Turbo.Packets.Outgoing.Navigator.CanCreateRoomMessage;
 using MessengerInitMessage = Turbo.Packets.Outgoing.FriendList.MessengerInitMessage;
@@ -313,6 +320,13 @@ public class PluginRevision : IRevision
         { typeof(FlatCreatedMessage), new FlatCreatedSerializer() },
         { typeof(CanCreateRoomMessage), new CanCreateRoomSerializer() },
 
+        //Camera
+        { typeof(InitCameraMessage), new InitCameraMessageSerializer() },
+
+        //Navigator
+        { typeof(RoomRatingMessage), new RoomRatingSerializer() },
+        { typeof(RoomEventMessage), new RoomEventSerializer() },
+
         //Catalog
         { typeof(CatalogIndexMessage), new CatalogIndexSerializer() },
         { typeof(CatalogPageMessage), new CatalogPageSerializer() },
@@ -324,10 +338,16 @@ public class PluginRevision : IRevision
         { typeof(MarketplaceConfigurationMessage), new MarketplaceConfigurationSerializer() },
         { typeof(YouAreOwnerMessage), new YouAreOwnerSerializer() },
 
+        //Inventory Achievements
+        { typeof(AchievementsMessage), new AchievementsSerializer() },
+
         //Inventory Furni
         { typeof(FurniListMessage), new FurniListSerializer() },
         { typeof(FurniListRemoveMessage), new FurniListRemoveSerializer() },
         { typeof(FurniListAddOrUpdateMessage), new FurniListAddOrUpdateSerializer() },
+
+        //GroupForums
+        { typeof(HabboGroupBadgesMessage), new HabboGroupBadgesMessageSerializer() },
 
         //Notifications
         { typeof(UnseenItemsMessage), new UnseenItemsSerializer() },
@@ -337,17 +357,25 @@ public class PluginRevision : IRevision
         { typeof(ExpressionMessage), new ExpressionMessageSerializer() },
         { typeof(SleepMessage), new SleepMessageSerializer() },
 
+        //Room Session
+        { typeof(HanditemConfigurationMessage), new HanditemConfigurationMessageSerializer() },
+
         //RoomSettings
         { typeof(RoomSettingsDataMessage), new RoomSettingsDataMessageSerializer() },
 
         //Users
         { typeof(ExtendedProfileMessage), new ExtendedProfileMessageSerializer() },
         { typeof(UserBadgesMessage), new UserBadgesMessageSerializer() },
-        { typeof(RelationshipStatusInfoMessage), new RelationshipStatusInfoSerializer() }
+        { typeof(RelationshipStatusInfoMessage), new RelationshipStatusInfoSerializer() },
+
+        //UserDefinedRoomEvents WiredMenu
+        {  typeof(WiredPermissionsMessage), new WiredPermissionsSerializer() }
 
         //MISSING PACKETS
         //2602	VersionCheckMessageComposer
         //1390	UniqueIDMessageComposer
         //3967	Game2GetAccountGameStatusMessageComposer
+
+        //2798	HabboGroupBadgesMessageEvent
     };
 }
