@@ -95,7 +95,7 @@ namespace Turbo.WIN63202506020918587581630;
 
 public class PluginRevision : IRevision
 {
-    public string Revision => "WIN63-202407091256-704579380";
+    public string Revision => "WIN63-202506020918-587581630";
 
     public IDictionary<int, IParser> Parsers { get; } = new Dictionary<int, IParser>
     {

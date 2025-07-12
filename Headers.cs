@@ -1,6 +1,4 @@
 ﻿using JetBrains.Annotations;
-using System.Reflection.PortableExecutable;
-using Turbo.WIN63202506020918587581630.Parsers.Catalog;
 
 namespace Turbo.WIN63202506020918587581630;
 
@@ -484,8 +482,8 @@ public static class MessageComposer
     public const int NavigatorSettingsComposer = 642;
     public const int OfficialRoomsComposer = 331;
     public const int PopularRoomTagsResultComposer = 2016;
-    public const int RoomEventCancelEvent = 1072;
-    public const int RoomEventEvent = 1715;
+    public const int RoomEventCancelComposer = 1072;
+    public const int RoomEventComposer = 1715;
     public const int RoomInfoUpdatedComposer = 1396;
     public const int RoomRatingComposer = 572;
     public const int UserEventCatsEvent = 2054;
@@ -505,8 +503,6 @@ public static class MessageComposer
     public const int WiredRewardResultMessageComposer = 1564;
     public const int WiredSaveSuccessComposer = 3258;
     public const int WiredValidationErrorComposer = 3766;
-
-    public static int RoomEventComposer { get; internal set; }
 }
 
 [PublicAPI]
