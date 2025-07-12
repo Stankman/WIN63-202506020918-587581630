@@ -468,10 +468,10 @@ public static class MessageComposer
     public const int UserUpdateMessageComposer = 334;
     public const int WiredMovementsMessageComposer = 3278;
     public const int CanCreateRoomComposer = 1137;
-    public const int CanCreateRoomEventEvent = 78;
+    public const int CanCreateRoomEventComposer = 78;
     public const int CategoriesWithVisitorCountComposer = 3613;
     public const int CompetitionRoomsDataMessageComposer = 269;
-    public const int ConvertedRoomIdComposer = 3113;
+    public const int ConvertedRoomUserEventCatsEventIdComposer = 3113;
     public const int DoorbellMessageComposer = 3158;
     public const int FavouriteChangedComposer = 421;
     public const int FavouritesComposer = 1876;
@@ -486,7 +486,7 @@ public static class MessageComposer
     public const int RoomEventComposer = 1715;
     public const int RoomInfoUpdatedComposer = 1396;
     public const int RoomRatingComposer = 572;
-    public const int UserEventCatsEvent = 2054;
+    public const int UserEventCatsComposer = 2054;
     public const int UserFlatCatsComposer = 2959;
     public const int FurniListAddOrUpdateComposer = 3991;
     public const int FurniListComposer = 2604;
@@ -503,6 +503,25 @@ public static class MessageComposer
     public const int WiredRewardResultMessageComposer = 1564;
     public const int WiredSaveSuccessComposer = 3258;
     public const int WiredValidationErrorComposer = 3766;
+
+    // === NEW PACKET COMPOSERS ===
+    public const int UserPurchasableChatStyleChangedMessageComposer = 662; // New packet
+    public const int UserPurchasableChatStylesMessageComposer = 625; // New packet
+    public const int DailyTasksActiveListMessageComposer = 627; // New packet
+    public const int DailyTasksTasksAddedMessageComposer = 889; // New packet
+    public const int DailyTasksTaskUpdateMessageComposer = 2119; // New packet
+    public const int TradeNftAssetInventoryMessageComposer = 477; // New packet
+    public const int TradeNftAssetsMessageComposer = 892; // New packet
+    public const int FurniListRemoveMultipleComposer = 635; // New packet
+    public const int NftClaimResultMessageComposer = 2435; // New packet
+    public const int NftClaimsMessageComposer = 695; // New packet
+    public const int NftStoreOffersMessageComposer = 2636; // New packet
+    public const int NftStorePurchaseMessageComposer = 3279; // New packet
+    public const int NftEmeraldConvertResultMessageComposer = 3879; // New packet
+    public const int BanInfoMessageComposer = 161; // New packet
+    public const int MyCfhReportStatusMessageComposer = 1329; // New packet
+    public const int WiredClickUserResponseComposer = 727; // New packet
+    public const int WiredEnvironmentMessageComposer = 123; // New packet
 }
 
 [PublicAPI]
@@ -995,5 +1014,18 @@ public enum MessageEvent
     UpdateConditionMessageEvent = 1199,
     UpdateSelectorMessageEvent = 1943,
     UpdateTriggerMessageEvent = 2040,
-    UpdateVariableMessageEvent = 704
+    UpdateVariableMessageEvent = 704,
+
+    // === NEW PACKET EVENTS ===
+    GetCfhMyReportStatus = 2027, // New packet
+    ClaimNftClaimsMessageEvent = 1895, // New packet
+    GetNftClaimsMessageEvent = 1293, // New packet
+    GetNftStoreOffersMessageEvent = 1640, // New packet
+    NftStorePurchaseMessageEvent = 2783, // New packet
+    ClaimDailyTaskEvent = 4101, // New packet
+    GetDailyTasksEvent = 4100, // New packet
+    AddNftToTradeEvent = 3235, // New packet
+    GetNftTradeInventoryEvent = 1704, // New packet
+    RemoveNftFromTradeEvent = 2412, // New packet
+    WiredClickUserMessageEvent = 13 // New packet
 }

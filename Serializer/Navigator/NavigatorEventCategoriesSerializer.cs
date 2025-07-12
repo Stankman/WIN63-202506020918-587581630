@@ -5,7 +5,7 @@ using Turbo.Packets.Serializers;
 namespace Turbo.WIN63202506020918587581630.Serializer.Navigator;
 
 public class NavigatorEventCategoriesSerializer()
-    : AbstractSerializer<NavigatorEventCategoriesMessage>(MessageComposer.UserEventCatsEvent)
+    : AbstractSerializer<NavigatorEventCategoriesMessage>(MessageComposer.UserEventCatsComposer)
 {
     protected override void Serialize(IServerPacket packet, NavigatorEventCategoriesMessage message)
     {
