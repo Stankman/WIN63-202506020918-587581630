@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Camera;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Camera;
+namespace Turbo.WIN63202506020918587581630.Serializer.Camera;
 
 public class InitCameraMessageSerializer() : AbstractSerializer<InitCameraMessage>(MessageComposer.InitCameraMessageComposer)
 {

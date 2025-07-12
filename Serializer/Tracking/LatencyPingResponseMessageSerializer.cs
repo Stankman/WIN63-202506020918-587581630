@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Tracking;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Tracking;
+namespace Turbo.WIN63202506020918587581630.Serializer.Tracking;
 
 public class LatencyPingResponseMessageSerializer() : AbstractSerializer<LatencyPingResponseMessage>(MessageComposer.LatencyPingResponseMessageComposer)
 {

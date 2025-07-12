@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Advertising;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Advertising;
+namespace Turbo.WIN63202506020918587581630.Serializer.Advertising;
 
 public class InterstitialMessageSerializer() : AbstractSerializer<InterstitialMessage>(MessageComposer.InterstitialMessageComposer)
 {

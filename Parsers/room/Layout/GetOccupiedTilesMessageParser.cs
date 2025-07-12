@@ -2,7 +2,7 @@
 using Turbo.Packets.Incoming.Room.Layout;
 using Turbo.Packets.Parsers;
 
-namespace Turbo.WIN63202407091256704579380.Parsers.Room.Layout;
+namespace Turbo.WIN63202506020918587581630.Parsers.Room.Layout;
 
 public class GetOccupiedTilesMessageParser : AbstractParser<GetOccupiedTilesMessage>
 {

@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Catalog;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Catalog;
+namespace Turbo.WIN63202506020918587581630.Serializer.Catalog;
 public class BuildersClubSubscriptionStatusSerializer() : AbstractSerializer<BuildersClubSubscriptionStatusMessage>(MessageComposer.BuildersClubSubscriptionStatusMessageComposer)
 {
     protected override void Serialize(IServerPacket packet, BuildersClubSubscriptionStatusMessage message)

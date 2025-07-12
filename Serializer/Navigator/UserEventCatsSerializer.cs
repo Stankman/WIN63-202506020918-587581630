@@ -2,9 +2,9 @@ using Turbo.Core.Packets.Messages;
 using Turbo.Packets.Outgoing.Navigator;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Navigator;
+namespace Turbo.WIN63202506020918587581630.Serializer.Navigator;
 
-public class UserEventCatsSerializer() : AbstractSerializer<UserEventCatsMessage>(MessageComposer.UserComposerCatsEvent)
+public class UserEventCatsSerializer() : AbstractSerializer<UserEventCatsMessage>(MessageComposer.UserEventCatsEvent)
 {
     protected override void Serialize(IServerPacket packet, UserEventCatsMessage message)
     {

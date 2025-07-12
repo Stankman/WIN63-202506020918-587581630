@@ -2,7 +2,7 @@
 using Turbo.Packets.Incoming.Notifications;
 using Turbo.Packets.Parsers;
 
-namespace Turbo.WIN63202407091256704579380.Parsers.Notifications;
+namespace Turbo.WIN63202506020918587581630.Parsers.Notifications;
 
 public class ResetUnseenItemsParser : AbstractParser<ResetUnseenItemsMessage>
 {

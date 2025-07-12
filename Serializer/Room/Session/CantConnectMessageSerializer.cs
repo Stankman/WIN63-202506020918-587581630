@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Room.Session;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Parsers.room;
+namespace Turbo.WIN63202506020918587581630.Parsers.room;
 
 public class CantConnectMessageSerializer() : AbstractSerializer<CantConnectMessage>(MessageComposer.CantConnectMessageComposer)
 {

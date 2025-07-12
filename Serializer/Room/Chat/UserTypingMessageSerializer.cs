@@ -2,7 +2,7 @@ using Turbo.Core.Packets.Messages;
 using Turbo.Packets.Outgoing.Room.Chat;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Room.Chat;
+namespace Turbo.WIN63202506020918587581630.Serializer.Room.Chat;
 
 public class UserTypingMessageSerializer() : AbstractSerializer<UserTypingMessage>(MessageComposer.UserTypingMessageComposer)
 {

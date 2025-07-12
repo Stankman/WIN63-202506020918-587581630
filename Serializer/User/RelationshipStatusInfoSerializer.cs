@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Users;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.User;
+namespace Turbo.WIN63202506020918587581630.Serializer.User;
 
 public class RelationshipStatusInfoSerializer() : AbstractSerializer<RelationshipStatusInfoMessage>(MessageComposer.RelationshipStatusInfoComposer)
 {

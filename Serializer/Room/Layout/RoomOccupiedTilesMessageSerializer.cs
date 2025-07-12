@@ -4,7 +4,7 @@ using Turbo.Core.Packets.Messages;
 using Turbo.Packets.Outgoing.Room.Layout;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Room.Layout;
+namespace Turbo.WIN63202506020918587581630.Serializer.Room.Layout;
 
 public class RoomOccupiedTilesMessageSerializer() : AbstractSerializer<RoomOccupiedTilesMessage>(MessageComposer.RoomOccupiedTilesMessageComposer)
 {

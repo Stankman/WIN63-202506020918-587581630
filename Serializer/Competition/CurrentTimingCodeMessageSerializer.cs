@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Competition;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Competition;
+namespace Turbo.WIN63202506020918587581630.Serializer.Competition;
 
 public class CurrentTimingCodeMessageSerializer()
     : AbstractSerializer<CurrentTimingCodeMessage>(MessageComposer.CurrentTimingCodeMessageComposer)

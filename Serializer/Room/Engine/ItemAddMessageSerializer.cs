@@ -1,9 +1,9 @@
 using Turbo.Core.Packets.Messages;
 using Turbo.Packets.Outgoing.Room.Engine;
 using Turbo.Packets.Serializers;
-using Turbo.WIN63202407091256704579380.Serializer.room.Types;
+using Turbo.WIN63202506020918587581630.Serializer.room.Types;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.room;
+namespace Turbo.WIN63202506020918587581630.Serializer.room;
 
 public class ItemAddMessageSerializer() : AbstractSerializer<ItemAddMessage>(MessageComposer.ItemAddMessageComposer)
 {

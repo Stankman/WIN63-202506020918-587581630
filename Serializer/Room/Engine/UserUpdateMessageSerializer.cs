@@ -3,7 +3,7 @@ using Turbo.Core.Packets.Messages;
 using Turbo.Packets.Outgoing.Room.Engine;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.room;
+namespace Turbo.WIN63202506020918587581630.Serializer.room;
 
 public class UserUpdateMessageSerializer() : AbstractSerializer<UserUpdateMessage>(MessageComposer.UserUpdateMessageComposer)
 {

@@ -2,7 +2,7 @@
 using Turbo.Packets.Incoming.Users;
 using Turbo.Packets.Parsers;
 
-namespace Turbo.WIN63202407091256704579380.Parsers.Users;
+namespace Turbo.WIN63202506020918587581630.Parsers.Users;
 public class GetRelationshipStatusInfoMessageParser : AbstractParser<GetRelationshipStatusInfoMessage>
 {
     public override IMessageEvent Parse(IClientPacket packet) => new GetRelationshipStatusInfoMessage

@@ -2,7 +2,7 @@
 using Turbo.Packets.Incoming.FriendList;
 using Turbo.Packets.Parsers;
 
-namespace Turbo.WIN63202407091256704579380.Parsers.Friendlist;
+namespace Turbo.WIN63202506020918587581630.Parsers.Friendlist;
 
 public class MessengerInitMessageParser : AbstractParser<MessengerInitMessage>
 {

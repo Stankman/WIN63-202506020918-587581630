@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.FriendList;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.FriendList;
+namespace Turbo.WIN63202506020918587581630.Serializer.FriendList;
 
 public class MessengerInitSerializer() : AbstractSerializer<MessengerInitMessage>(MessageComposer.MessengerInitComposer)
 {

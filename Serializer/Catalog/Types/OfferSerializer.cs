@@ -2,7 +2,7 @@
 using Turbo.Core.Game.Catalog.Constants;
 using Turbo.Core.Packets.Messages;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Catalog.Types;
+namespace Turbo.WIN63202506020918587581630.Serializer.Catalog.Types;
 public class OfferSerializer
 {
     //TODO Silver not required on PurchaseOKMessage 

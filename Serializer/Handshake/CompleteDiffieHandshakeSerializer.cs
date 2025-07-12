@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Handshake;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Handshake;
+namespace Turbo.WIN63202506020918587581630.Serializer.Handshake;
 
 public class CompleteDiffieHandshakeSerializer()
     : AbstractSerializer<CompleteDiffieHandshakeComposer>(MessageComposer.CompleteDiffieHandshakeComposer)

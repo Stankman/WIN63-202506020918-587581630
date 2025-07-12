@@ -1,9 +1,9 @@
 ﻿using Turbo.Core.Packets.Messages;
 using Turbo.Packets.Outgoing.RoomSettings;
 using Turbo.Packets.Serializers;
-using Turbo.WIN63202407091256704579380.Serializer.RoomSettings.Types;
+using Turbo.WIN63202506020918587581630.Serializer.RoomSettings.Types;
 
-namespace Turbo.WIN63202407091256704579380.Serializers.RoomSettings;
+namespace Turbo.WIN63202506020918587581630.Serializers.RoomSettings;
 
 public class RoomSettingsDataMessageSerializer() : AbstractSerializer<RoomSettingsDataMessage>(MessageComposer.RoomSettingsDataComposer)
 {

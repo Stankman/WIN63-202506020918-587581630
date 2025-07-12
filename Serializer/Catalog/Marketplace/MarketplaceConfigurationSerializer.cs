@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Catalog;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Catalog.Marketplace;
+namespace Turbo.WIN63202506020918587581630.Serializer.Catalog.Marketplace;
 public class MarketplaceConfigurationSerializer() : AbstractSerializer<MarketplaceConfigurationMessage>(MessageComposer.MarketplaceConfigurationComposer)
 {
     protected override void Serialize(IServerPacket packet, MarketplaceConfigurationMessage message)

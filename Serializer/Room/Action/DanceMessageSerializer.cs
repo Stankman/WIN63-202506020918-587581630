@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Room.Action;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Room.Action;
+namespace Turbo.WIN63202506020918587581630.Serializer.Room.Action;
 public class DanceMessageSerializer() : AbstractSerializer<DanceMessage>(MessageComposer.DanceMessageComposer)
 {
     protected override void Serialize(IServerPacket packet, DanceMessage message)

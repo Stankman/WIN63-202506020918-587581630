@@ -2,7 +2,7 @@
 using Turbo.Packets.Incoming.Catalog;
 using Turbo.Packets.Parsers;
 
-namespace Turbo.WIN63202407091256704579380.Parsers.Catalog;
+namespace Turbo.WIN63202506020918587581630.Parsers.Catalog;
 public class GetGiftWrappingConfigurationParser : AbstractParser<GetGiftWrappingConfigurationMessage>
 {
     public override IMessageEvent Parse(IClientPacket packet) => new GetGiftWrappingConfigurationMessage();

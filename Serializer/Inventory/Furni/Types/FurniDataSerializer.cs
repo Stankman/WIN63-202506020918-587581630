@@ -1,7 +1,7 @@
 ﻿using Turbo.Core.Game.Inventory;
 using Turbo.Core.Packets.Messages;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Inventory.Furni.Types;
+namespace Turbo.WIN63202506020918587581630.Serializer.Inventory.Furni.Types;
 public static class FurniDataSerializer
 {
     public static void Serialize(IServerPacket packet, IPlayerFurniture furniture)

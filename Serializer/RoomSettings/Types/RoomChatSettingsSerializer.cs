@@ -1,7 +1,7 @@
 ﻿using Turbo.Core.Game.Rooms;
 using Turbo.Core.Packets.Messages;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.RoomSettings.Types;
+namespace Turbo.WIN63202506020918587581630.Serializer.RoomSettings.Types;
 public static class RoomChatSettingsSerializer
 {
     public static void Serialize(IServerPacket packet, IRoomDetails roomDetails)

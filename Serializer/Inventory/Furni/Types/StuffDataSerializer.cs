@@ -3,7 +3,7 @@ using Turbo.Core.Game.Rooms.Object;
 using Turbo.Core.Packets.Messages;
 using Turbo.Furniture.Data.Types;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Inventory.Furni.Types;
+namespace Turbo.WIN63202506020918587581630.Serializer.Inventory.Furni.Types;
 
 public static class StuffDataSerializer
     {

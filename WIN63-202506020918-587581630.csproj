@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
-        <RootNamespace>Turbo.WIN63202407091256704579380</RootNamespace>
+        <RootNamespace>Turbo.WIN63202506020918587581630</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PluginOutputPath>..\Turbo\bin\Debug\net8.0\plugins\</PluginOutputPath>

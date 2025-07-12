@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Room.Permissions;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.room;
+namespace Turbo.WIN63202506020918587581630.Serializer.room;
 
 public class YouAreControllerMessageSerializer() : AbstractSerializer<YouAreControllerMessage>(MessageComposer.YouAreControllerMessageComposer)
 {

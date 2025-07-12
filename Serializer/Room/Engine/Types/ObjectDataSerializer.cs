@@ -1,8 +1,8 @@
 using Turbo.Core.Game.Rooms.Object;
 using Turbo.Core.Packets.Messages;
-using Turbo.WIN63202407091256704579380.Serializer.Inventory.Furni.Types;
+using Turbo.WIN63202506020918587581630.Serializer.Inventory.Furni.Types;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.room.Types;
+namespace Turbo.WIN63202506020918587581630.Serializer.room.Types;
 
 public static class ObjectDataSerializer
 {

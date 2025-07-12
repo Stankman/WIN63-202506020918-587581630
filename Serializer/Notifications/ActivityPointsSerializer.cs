@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Notifications;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Notifications;
+namespace Turbo.WIN63202506020918587581630.Serializer.Notifications;
 public class ActivityPointsSerializer() : AbstractSerializer<ActivityPointsMessage>(MessageComposer.ActivityPointsMessageComposer)
 {
     protected override void Serialize(IServerPacket packet, ActivityPointsMessage message)

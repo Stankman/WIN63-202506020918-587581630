@@ -4,7 +4,7 @@ using Turbo.Packets.Incoming.Room.Engine;
 using Turbo.Packets.Parsers;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Turbo.WIN63202407091256704579380.Parsers.Room.Engine;
+namespace Turbo.WIN63202506020918587581630.Parsers.Room.Engine;
 public class PlaceObjectMessageParser : AbstractParser<PlaceObjectMessage>
 {
     public override IMessageEvent Parse(IClientPacket packet)

@@ -1,4 +1,4 @@
-﻿namespace Turbo.WIN63202407091256704579380.Parsers.Inventory.Furni;
+﻿namespace Turbo.WIN63202506020918587581630.Parsers.Inventory.Furni;
 public class RequestFurniInventoryParser
 {
 }

@@ -2,7 +2,7 @@
 using Turbo.Packets.Incoming.SoundSettings;
 using Turbo.Packets.Parsers;
 
-namespace Turbo.WIN63202407091256704579380.Parsers.SoundSettings;
+namespace Turbo.WIN63202506020918587581630.Parsers.SoundSettings;
 
 public class GetSoundSettingsParser : AbstractParser<GetSoundSettingsMessage>
 {

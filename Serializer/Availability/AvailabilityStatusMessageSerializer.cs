@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Availability;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Availability;
+namespace Turbo.WIN63202506020918587581630.Serializer.Availability;
 
 public class AvailabilityStatusMessageSerializer()
     : AbstractSerializer<AvailabilityStatusMessage>(MessageComposer.AvailabilityStatusMessageComposer)

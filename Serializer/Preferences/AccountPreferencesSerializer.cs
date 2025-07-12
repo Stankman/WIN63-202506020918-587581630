@@ -2,7 +2,7 @@
 using Turbo.Packets.Outgoing.Preferences;
 using Turbo.Packets.Serializers;
 
-namespace Turbo.WIN63202407091256704579380.Serializer.Preferences;
+namespace Turbo.WIN63202506020918587581630.Serializer.Preferences;
 public class AccountPreferencesSerializer() : AbstractSerializer<AccountPreferencesMessage>(MessageComposer.AccountPreferencesComposer)
 {
     protected override void Serialize(IServerPacket packet, AccountPreferencesMessage message)

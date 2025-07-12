@@ -2,16 +2,16 @@
 using Turbo.Core.Plugins;
 using Turbo.Packets.Revisions;
 
-namespace Turbo.WIN63202407091256704579380;
+namespace Turbo.WIN63202506020918587581630;
 
-public class Revision704579380Plugin : ITurboPlugin
+public class Revision587581630Plugin : ITurboPlugin
 {
-    public string PluginName => "REV-WIN63-202407091256-704579380";
+    public string PluginName => "REV-WIN63-202506020918-587581630";
     public string PluginAuthor => "dotmbf";
 
-    public Revision704579380Plugin(
+    public Revision587581630Plugin(
         IRevisionManager revisionManager,
-        ILogger<Revision704579380Plugin> logger
+        ILogger<Revision587581630Plugin> logger
     )
     {
         var myRevision = new PluginRevision();
@@ -19,6 +19,6 @@ public class Revision704579380Plugin : ITurboPlugin
 
         revisionManager.DefaultRevision = myRevision;
 
-        logger.LogInformation("{} - Registered revision: {}", nameof(Revision704579380Plugin), myRevision.Revision);
+        logger.LogInformation("{} - Registered revision: {}", nameof(Revision587581630Plugin), myRevision.Revision);
     }
 }
