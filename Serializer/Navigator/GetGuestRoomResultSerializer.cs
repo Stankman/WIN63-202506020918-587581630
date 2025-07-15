@@ -26,6 +26,8 @@ public class GetGuestRoomResultSerializer() : AbstractSerializer<GetGuestRoomRes
         packet.WriteBoolean(message.CanMute);
 
         SerializeChatSettings(packet, roomDetails);
+
+        packet.WriteBoolean(true); //Opening Connection NEW PACKET
     }
     
     private void SerializeRoomData(IServerPacket packet, IRoomDetails roomDetails)

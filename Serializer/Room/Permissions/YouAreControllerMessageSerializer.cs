@@ -8,7 +8,7 @@ public class YouAreControllerMessageSerializer() : AbstractSerializer<YouAreCont
 {
     protected override void Serialize(IServerPacket packet, YouAreControllerMessage message)
     {
-        packet.WriteInteger(message.RoomId)
-            .WriteInteger((int)message.RoomControllerLevel);
+        packet.WriteInteger(message.RoomId);
+        packet.WriteInteger((int)message.RoomControllerLevel);
     }
 }

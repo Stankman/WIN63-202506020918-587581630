@@ -1,7 +1,5 @@
-﻿using System.Reflection.PortableExecutable;
-using Turbo.Core.Packets.Messages;
+﻿using Turbo.Core.Packets.Messages;
 using Turbo.Core.Packets.Revisions;
-using Turbo.Packets.Incoming.Catalog;
 using Turbo.Packets.Outgoing.Advertising;
 using Turbo.Packets.Outgoing.Availability;
 using Turbo.Packets.Outgoing.CallForHelp;
@@ -35,7 +33,7 @@ using Turbo.WIN63202506020918587581630.Parsers.Advertising;
 using Turbo.WIN63202506020918587581630.Parsers.Camera;
 using Turbo.WIN63202506020918587581630.Parsers.Catalog;
 using Turbo.WIN63202506020918587581630.Parsers.Competition;
-using Turbo.WIN63202506020918587581630.Parsers.Friendlist;
+using Turbo.WIN63202506020918587581630.Parsers.FriendList;
 using Turbo.WIN63202506020918587581630.Parsers.GroupForums;
 using Turbo.WIN63202506020918587581630.Parsers.Handshake;
 using Turbo.WIN63202506020918587581630.Parsers.Inventory.Achievements;
