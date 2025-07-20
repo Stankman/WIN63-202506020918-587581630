@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PluginOutputPath>..\Turbo\bin\Debug\net8.0\plugins\</PluginOutputPath>
+        <BaseOutputPath></BaseOutputPath>
     </PropertyGroup>
 
     <ItemGroup>
@@ -53,7 +54,7 @@
     </Target>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="xcopy /Y &quot;$(TargetDir)$(TargetFileName)&quot; &quot;D:\dark_\Code\Turbo\Turbo\bin\Debug\net8.0\plugins&quot;" />
+      <Exec Command="xcopy /Y &quot;$(TargetDir)$(TargetFileName)&quot; &quot;D:\dark_\Code\Turbo\Turbo\plugins&quot;" />
     </Target>
 
 </Project>
